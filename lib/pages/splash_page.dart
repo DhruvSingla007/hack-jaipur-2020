@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hackjaipur2020/onboardingpages/onboarding_screen.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class SplashScreenState extends State<AnimatedSplashScreen>
   }
 
   void navigationPage() {
-    return null;
+    Navigator.of(context).pushReplacementNamed(OnboardingScreen.routeName);
   }
 
   @override
