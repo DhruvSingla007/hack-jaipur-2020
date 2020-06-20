@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "726562335697",
+    "firebase_url": "https://hack-jaipur-2020.firebaseio.com",
+    "project_id": "hack-jaipur-2020",
+    "storage_bucket": "hack-jaipur-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726562335697:android:5bfb6719b51c6e7c4f0ef0",
+        "android_client_info": {
+          "package_name": "com.stoned.hackjaipur2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726562335697-vqkhden33qqukdgguu2m21r4m8gfevan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stoned.hackjaipur2020",
+            "certificate_hash": "7dee2334242ba71186c42d22fc956e2be7752348"
+          }
+        },
+        {
+          "client_id": "726562335697-lha25tam5s9qdfhkci4bv0jgd49dl2qh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPb5BgDCNTykypo7ujnTayem-kiMkYTI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726562335697-lha25tam5s9qdfhkci4bv0jgd49dl2qh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
