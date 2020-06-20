@@ -1,7 +1,7 @@
 import 'package:hackjaipur2020/models/channel_model.dart';
 import 'package:hackjaipur2020/models/video_model.dart';
 //import 'package:hackjaipur2020/pages/video_page.dart';
-//import 'package:hackjaipur2020/services/api_service.dart';
+import 'package:hackjaipur2020/services/api_service.dart';
 import 'package:flutter/material.dart';
 
 class ExtrasPage extends StatefulWidget {
@@ -15,19 +15,19 @@ class _ExtrasPageState extends State<ExtrasPage> {
   Channel _channel;
   bool _isLoading = false;
 
-//  @override
-//  void initState() {
-//    super.initState();
-//    _initChannel();
-//  }
+  @override
+  void initState() {
+    super.initState();
+    _initChannel();
+  }
 
-//  _initChannel() async {
-//    Channel channel = await APIService.instance
-//        .fetchChannel(channelId: 'UC0InVdvqNyNzKBl1-TL348A');
-//    setState(() {
-//      _channel = channel;
-//    });
-//  }
+  _initChannel() async {
+    Channel channel = await APIService.instance
+        .fetchChannel(channelId: 'UC0InVdvqNyNzKBl1-TL348A');
+    setState(() {
+      _channel = channel;
+    });
+  }
 
   _buildProfileInfo() {
     return Container(
@@ -132,12 +132,12 @@ class _ExtrasPageState extends State<ExtrasPage> {
 
   _loadMoreVideos() async {
     _isLoading = true;
-//    List<Video> moreVideos = await APIService.instance
-//        .fetchVideosFromPlaylist(playlistId: _channel.uploadPlaylistId);
-//    List<Video> allVideos = _channel.videos..addAll(moreVideos);
-//    setState(() {
-//      _channel.videos = allVideos;
-//    });
+    List<Video> moreVideos = await APIService.instance
+        .fetchVideosFromPlaylist(playlistId: _channel.uploadPlaylistId);
+    List<Video> allVideos = _channel.videos..addAll(moreVideos);
+    setState(() {
+      _channel.videos = allVideos;
+    });
     _isLoading = false;
   }
 
