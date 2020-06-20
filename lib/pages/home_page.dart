@@ -1,5 +1,5 @@
 //import 'package:hackjaipur2020/drawer/drawer.dart';
-//import 'package:hackjaipur2020/pages/discussions.dart';
+import 'package:hackjaipur2020/pages/discussions.dart';
 //import 'package:hackjaipur2020/pages/relax_zone_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -10,7 +10,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import 'dashboard_page.dart';
-//import 'extras_page.dart';
+import 'extras_page.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/home-page";
@@ -83,10 +83,10 @@ class _HomePageState extends State<HomePage> {
 //      'page': DashboardPage(),
 //      'appBarTitle': 'Dashboard',
 //    },
-//    {
-//      'page': DiscussionsPage(),
-//      'appBarTitle': 'Discussions',
-//    },
+    {
+      'page': DiscussionsPage(),
+      'appBarTitle': 'Discussions',
+    },
     {
       'page': ExtrasPage(),
       'appBarTitle': 'Extras',

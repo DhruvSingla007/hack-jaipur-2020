@@ -90,7 +90,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) =>  null, //VideoScreen(id: video.id),
+          builder: (_) =>  VideoScreen(id: video.id),
         ),
       ),
       child: Container(
