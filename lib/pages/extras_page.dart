@@ -1,6 +1,6 @@
 import 'package:hackjaipur2020/models/channel_model.dart';
 import 'package:hackjaipur2020/models/video_model.dart';
-//import 'package:hackjaipur2020/pages/video_page.dart';
+import 'package:hackjaipur2020/pages/video_page.dart';
 import 'package:hackjaipur2020/services/api_service.dart';
 import 'package:flutter/material.dart';
 
