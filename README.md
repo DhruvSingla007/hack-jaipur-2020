@@ -55,7 +55,7 @@ samples, guidance on mobile development, and a full API reference.
 
 <br>
 
-### ❤️&nbsp; Project Contributor
+## ❤️&nbsp; Project Contributor
 
 <a href="https://github.com/Harshit564"><img src="https://avatars1.githubusercontent.com/u/47476857?s=400&u=8b1d57f71964ea8821662524e171a16e4fcc5c79&v=4" width=150px height=150px /></a>                                                                                         |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -71,7 +71,7 @@ samples, guidance on mobile development, and a full API reference.
 |                                                                                                                                        **[Dhruv Singla](https://www.linkedin.com/in/dhruv-singla-116598135/)**                                                                                                                                        |
 |<a href="https://www.linkedin.com/in/dhruv-singla-116598135/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> | 
 
-<br>
+---
 
 <a href="https://github.com/Nisha2701"><img src="https://avatars2.githubusercontent.com/u/60098687?s=400&v=4" width=150px height=150px /><a>                                                                                         |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
