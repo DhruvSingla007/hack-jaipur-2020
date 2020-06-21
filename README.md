@@ -65,10 +65,6 @@ samples, guidance on mobile development, and a full API reference.
 
 [![GitHub followers](https://img.shields.io/github/followers/Harshit564?label=Follow&style=social)](https://github.com/Harshit564/)
 
-[![ForTheBadge built-with-love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Harshit564/)
-
-![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
-
 ---
 <a href="https://github.com/DhruvSingla007"><img src="https://avatars3.githubusercontent.com/u/46241019?s=400&u=8b6cc353e4ffe212585db93ee09bc118e1e2748d&v=4" width=150px height=150px /></a>                                                                                         |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
