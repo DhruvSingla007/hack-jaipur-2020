@@ -81,6 +81,7 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
                       child: Text(
                         'SET',
                         style: TextStyle(
+                          fontFamily: 'OpenSans',
                             color: Colors.white,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold),

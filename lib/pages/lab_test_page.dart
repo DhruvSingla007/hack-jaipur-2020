@@ -78,10 +78,10 @@ class _LabTestPageState extends State<LabTestPage> {
             items: name,
             searchLabel: 'Search Lab Reports',
             suggestion: Center(
-              child: Text('Filter lab reports by name, description'),
+              child: Text('Filter lab reports by name, description',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             failure: Center(
-              child: Text('No lab reports found :('),
+              child: Text('No lab reports found :(',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             filter: (labtest) => [
               labtest.labName,

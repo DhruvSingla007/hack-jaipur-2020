@@ -45,7 +45,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
   void getUserDetails() async {
     FirebaseAuth.instance.currentUser().then((value) {
       authUser = value;
-      _userRef.document(authUser.uid).get().then((value) {
+      _userRef.document(authUser.displayName).get().then((value) {
         setState(() {
           user = User.fromSnapshot(value);
         });
@@ -61,9 +61,11 @@ class _QuestionDetailState extends State<QuestionDetail> {
         title: Text(
           "Question",
           style: TextStyle(
-            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+            fontFamily: 'OpenSans',
           ),
         ),
+        centerTitle: true,
       ),
       body: (user != null)
           ? Container(
@@ -87,7 +89,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text("Loading", style: TextStyle(fontSize: 16)),
+                            Text("Loading", style: TextStyle(fontSize: 16,fontFamily: 'OpenSans')),
                             CircularProgressIndicator()
                           ]))),
             ),
@@ -123,7 +125,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                         _validateAnswer();
                       },
                       child: Text("Answer!",
-                          style: TextStyle(color: Colors.white)))
+                          style: TextStyle(color: Colors.white,fontFamily: 'OpenSans')))
                 ],
               ),
             )
@@ -170,13 +172,13 @@ class _QuestionDetailState extends State<QuestionDetail> {
                 padding: const EdgeInsets.only(left: 15),
                 child: Text(
                   widget.question["asked_by"],
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18,fontFamily: 'OpenSans'),
                 ))
           ],
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(10, 15, 5, 15),
-          child: Text(widget.question["detail"]),
+          child: Text(widget.question["detail"],style: TextStyle(fontFamily: 'OpenSans'),),
         ),
         Container(
           padding: const EdgeInsets.only(top: 10),
@@ -213,7 +215,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                         Icons.error,
                         size: 75,
                       ),
-                      Text("No Answers Yet!", style: TextStyle(fontSize: 18))
+                      Text("No Answers Yet!", style: TextStyle(fontSize: 18,fontFamily: 'OpenSans'))
                     ]));
             }
 
@@ -224,7 +226,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
 
   List<Widget> createTags(var tags) {
     int length = tags.length;
-    List<Widget> tagList = [Text("Tags: ")];
+    List<Widget> tagList = [Text("Tags: ",style: TextStyle(fontFamily: 'OpenSans'),)];
 
     for (int i = 0; i < length; i++) {
       tagList.add(Container(
@@ -234,7 +236,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
             padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
             decoration: BoxDecoration(
                 color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-            child: Text(tags[i], style: TextStyle(color: Colors.white))),
+            child: Text(tags[i], style: TextStyle(color: Colors.white,fontFamily: 'OpenSans'))),
       ));
     }
 
@@ -270,6 +272,7 @@ class _QuestionDetailState extends State<QuestionDetail> {
                               Text(
                                 ans.answeredBy,
                                 style: TextStyle(
+                                  fontFamily: 'OpenSans',
                                     fontWeight: FontWeight.bold, fontSize: 14),
                               ),
                               Container(

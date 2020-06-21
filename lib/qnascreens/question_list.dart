@@ -37,50 +37,58 @@ class _QuestionsListState extends State<QuestionsList> {
         title: Text(
           widget.snapshot.data["name"],
           style: TextStyle(
-            fontFamily: 'Montserrat',
+            fontFamily: 'OpenSans',
+            fontWeight: FontWeight.bold
           ),
         ),
+        centerTitle: true,
       ),
-      body: StreamBuilder(
-          stream: Firestore.instance
-              .collection("Question_Tags")
-              .document(widget.snapshot.documentID)
-              .get()
-              .asStream(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) return Container();
+      body: Padding(
+        padding: const EdgeInsets.only(top:15.0, left: 8.0,right: 8.0),
+        child: StreamBuilder(
+            stream: Firestore.instance
+                .collection("Question_Tags")
+                .document(widget.snapshot.documentID)
+                .get()
+                .asStream(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return Container();
 
-            return (snapshot.data["question_list"].length == 0)
-                ? Center(
-                    child: Container(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Column(children: [
-                          Icon(
-                            Icons.error,
-                            size: 75,
-                          ),
-                          Text("No Questions Yet!",
-                              style: TextStyle(fontSize: 18))
-                        ])))
-                : ListView.separated(
-                    itemCount: snapshot.data["question_list"].length,
-                    separatorBuilder: (context, int) {
-                      return Divider();
-                    },
-                    itemBuilder: (BuildContext context, int index) {
-                      print(snapshot.data["question_list"].length);
-                      return questionTile(snapshot, index);
-                    },
-                  );
-          }),
+              return (snapshot.data["question_list"].length == 0)
+                  ? Center(
+                      child: Container(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Column(children: [
+                            Icon(
+                              Icons.error,
+                              size: 75,
+                            ),
+                            Text("No Questions Yet!",
+                                style: TextStyle(fontSize: 18,fontFamily: 'OpenSans'))
+                          ])))
+                  : ListView.separated(
+                      itemCount: snapshot.data["question_list"].length,
+                      separatorBuilder: (context, int) {
+                        return Divider(
+                          thickness: 2,
+                        );
+                      },
+                      itemBuilder: (BuildContext context, int index) {
+                        print(snapshot.data["question_list"].length);
+                        return questionTile(snapshot, index);
+                      },
+                    );
+            }),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _addQuestionDialog(context);
         },
         child: Icon(
           Icons.add,
-          color: Colors.white,
+          color: Colors.black,
         ),
+        backgroundColor: Color(0xff5cb3bc),
       ),
     );
   }
@@ -90,18 +98,13 @@ class _QuestionsListState extends State<QuestionsList> {
         context: context,
         builder: (BuildContext dialogcontext) {
           return StatefulBuilder(builder: (dialogcontext, setState) {
-            /*setState(() {
-              _validateTags = true;
-              _validateQues = true;
-            });*/
-
             return Dialog(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
+                  borderRadius: BorderRadius.circular(25.0),
                 ),
                 child: Container(
                     width: 350,
-                    height: 600,
+                    height: 420,
                     child: ListView(children: <Widget>[
                       Container(
                           padding: const EdgeInsets.all(10),
@@ -110,10 +113,10 @@ class _QuestionsListState extends State<QuestionsList> {
                           child: Center(
                             child: Text("Ask New Question",
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat',
+                                    fontFamily: 'OpenSans',
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
-                                    color: Colors.white)),
+                                    color: Colors.black)),
                           )),
                       Container(
                           padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
@@ -135,7 +138,7 @@ class _QuestionsListState extends State<QuestionsList> {
                           padding: const EdgeInsets.fromLTRB(10, 10, 5, 10),
                           child: Text("Select Tags",
                               style: TextStyle(
-                                  fontFamily: 'Montserrat',
+                                  fontFamily: 'OpenSans',
                                   fontSize: 18,
                                   color: Colors.black87))),
                       FutureBuilder(
@@ -146,7 +149,7 @@ class _QuestionsListState extends State<QuestionsList> {
                               (BuildContext context, AsyncSnapshot snapshot) {
                             if (!snapshot.hasData) {
                               return Center(
-                                  child: const Text('Loading Tags...'));
+                                  child: const Text('Loading Tags...',style: TextStyle(fontFamily: 'OpenSans'),));
                             } else {
                               createTagList(snapshot);
 
@@ -167,32 +170,38 @@ class _QuestionsListState extends State<QuestionsList> {
                           ? Container(
                               padding: const EdgeInsets.fromLTRB(20, 5, 0, 5),
                               child: Text("Select at least one tag",
-                                  style: TextStyle(color: Colors.red)))
+                                  style: TextStyle(color: Colors.red,fontFamily: 'OpenSans')))
                           : Container(),
                       Container(
-                          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
                               RaisedButton(
-                                  color: Colors.black38,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: new BorderRadius.circular(30.0),
+                                  ),
+                                  color: Color.fromRGBO(10, 10, 12, 2),
                                   onPressed: () {
                                     Navigator.of(dialogcontext).pop();
                                   },
                                   child: Text("CANCEL",
                                       style: TextStyle(
-                                          fontFamily: 'Montserrat',
+                                          fontFamily: 'OpenSans',
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white))),
                               RaisedButton(
-                                color: Colors.blue[500],
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(30.0),
+                                ),
+                                color: Color(0xff5cb3bc),
                                 onPressed: () {
                                   _saveQuestion(setState, dialogcontext);
                                   //Navigator.of(dialogcontext).pop();
                                 },
                                 child: Text("CONFIRM",
                                     style: TextStyle(
-                                        fontFamily: 'Montserrat',
+                                        fontFamily: 'OpenSans',
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white)),
                               ),
@@ -236,10 +245,11 @@ class _QuestionsListState extends State<QuestionsList> {
       this.question = questionController.text;
       String questionID = DateTime.now().millisecondsSinceEpoch.toString();
 
+      FirebaseUser currentUser;
       FirebaseAuth.instance.currentUser().then((authUser) {
         Firestore.instance
             .collection("users")
-            .document(authUser.uid)
+            .document(authUser.displayName)
             .get()
             .then((user) {
           User userObj = User.fromSnapshot(user);
@@ -299,7 +309,7 @@ class _QuestionsListState extends State<QuestionsList> {
                 });
               },
             ),
-            Text(tagName),
+            Text(tagName,style: TextStyle(fontFamily: 'OpenSans'),),
           ],
         ));
   }
@@ -325,6 +335,7 @@ class _QuestionsListState extends State<QuestionsList> {
                   snapshot.data.data["detail"],
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontFamily: 'OpenSans'),
                 ),
                 subtitle: Container(
                     padding: const EdgeInsets.only(top: 10),

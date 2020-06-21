@@ -34,13 +34,13 @@ class _HomePageState extends State<HomePage> {
   Future<bool> _onWillPop() {
     Alert(
       style: AlertStyle(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xffCBE7EA),
         titleStyle: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontFamily: 'OpenSans',
         ),
         descStyle: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontFamily: 'OpenSans',
         ),
       ),

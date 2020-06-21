@@ -88,7 +88,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
           child: Text(
             "Log Out",
             style: TextStyle(
-                fontFamily: 'Montserrat', color: Colors.white, fontSize: 20),
+                fontFamily: 'OpenSans', color: Colors.white, fontSize: 20),
           ),
           onPressed: () {
             handleSignOut().then((val) {

@@ -99,10 +99,10 @@ class _MedicinesPageState extends State<MedicinesPage> {
             items: name,
             searchLabel: 'Search medicines',
             suggestion: Center(
-              child: Text('Filter medicine by name, uses or availability'),
+              child: Text('Filter medicine by name, uses or availability',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             failure: Center(
-              child: Text('No medicine found :('),
+              child: Text('No medicine found :(',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             filter: (medicine) => [
               medicine.name,

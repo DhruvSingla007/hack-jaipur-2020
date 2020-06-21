@@ -83,12 +83,12 @@ class _HospitalsPageState extends State<HospitalsPage> {
           context: context,
           delegate: SearchPage<HospitalName>(
             items: name,
-            searchLabel: 'Search people',
+            searchLabel: 'Search hospitals',
             suggestion: Center(
-              child: Text('Filter people by name, surname or age'),
+              child: Text('Filter hospitals by name, address or availability',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             failure: Center(
-              child: Text('No person found :('),
+              child: Text('No hospitals found :(',style: TextStyle(fontFamily: 'OpenSans'),),
             ),
             filter: (hospital) => [
               hospital.name,

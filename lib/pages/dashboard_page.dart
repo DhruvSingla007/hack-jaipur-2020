@@ -59,7 +59,7 @@ class _DashboardPageState extends State<DashboardPage> {
   void _showErrorSnackBar() {
     Scaffold.of(context).showSnackBar(
       SnackBar(
-        content: Text('Oops... the URL couldn\'t be opened!'),
+        content: Text('Oops... the URL couldn\'t be opened!',style: TextStyle(fontFamily: 'OpenSans'),),
       ),
     );
   }

@@ -61,7 +61,7 @@ This is to check the offset of the menu Icon in top left corner.
   void _showErrorSnackBar() {
     Scaffold.of(context).showSnackBar(
       SnackBar(
-        content: Text('Oops... the URL couldn\'t be opened!'),
+        content: Text('Oops... the URL couldn\'t be opened!',style: TextStyle(fontFamily: 'OpenSans'),),
       ),
     );
   }
@@ -75,6 +75,33 @@ This is to check the offset of the menu Icon in top left corner.
     } else {
       throw 'Could not launch $launchUrl';
     }
+  }
+
+  void showDialogPopUp(String msg, BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            insetAnimationCurve: Curves.easeInCubic,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [Colors.lightGreen, Color(0xffCBE7EA)]),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Center(
+                    child: Text(
+                  msg,
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontFamily: 'OpenSans',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ))),
+          );
+        });
   }
 
   Widget _buildURLLogos({Icon iconUsed, String pageURL}) {
@@ -272,20 +299,20 @@ This is to check the offset of the menu Icon in top left corner.
             },
           ),
           ListTile(
-              leading: Icon(Icons.track_changes, color: Colors.white),
-              title: Text(
-                'Covid19 Tracker',
-                style: TextStyle(
-                  fontFamily: 'OpenSans',
-                  color: Colors.white,
-                ),
+            leading: Icon(Icons.track_changes, color: Colors.white),
+            title: Text(
+              'Covid19 Tracker',
+              style: TextStyle(
+                fontFamily: 'OpenSans',
+                color: Colors.white,
               ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CoronaTracker(),
-                ),
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CoronaTracker(),
               ),
+            ),
           ),
           ListTile(
             leading: Icon(Icons.local_hospital, color: Colors.white),
@@ -296,17 +323,7 @@ This is to check the offset of the menu Icon in top left corner.
                 color: Colors.white,
               ),
             ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NearHospital(),
-                ),
-              );
-
-              // Update the state of the app.
-              // ...
-            },
+            onTap: () => showDialogPopUp('Coming Soon!', context),
           ),
           ListTile(
             leading: Icon(Icons.account_box, color: Colors.white),
@@ -378,7 +395,10 @@ This is to check the offset of the menu Icon in top left corner.
                   child: Text(
                     'Follow On',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Baloo',fontSize: 20.0, color: Colors.white),
+                    style: TextStyle(
+                        fontFamily: 'Baloo',
+                        fontSize: 20.0,
+                        color: Colors.white),
                   ),
                 ),
                 Row(

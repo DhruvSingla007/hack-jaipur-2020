@@ -27,7 +27,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
               'Add Questions',
               style: TextStyle(
                   fontSize: 20.0,
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'OpenSans',
                   fontWeight: FontWeight.bold),
             ),
             content: Container(
@@ -59,7 +59,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
                   },
                   child: Text(
                     'Add',
-                    style: TextStyle(fontFamily: 'Montserrat'),
+                    style: TextStyle(fontFamily: 'OpenSans'),
                   ),
                 )
               ]),
@@ -98,28 +98,6 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
               );
             }),
       ]),
-
-      /*Column(
-        children: <Widget>[
-          CategorySelector(),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).accentColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
-                ),
-              ),
-              child: Column(
-                children: <Widget>[
-                  RecentChats(),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),*/
     );
   }
 
