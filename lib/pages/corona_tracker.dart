@@ -49,7 +49,7 @@ class _CoronaTrackerState extends State<CoronaTracker> {
   _buildMainTitle() {
     return RichText(
         text: TextSpan(
-            text: 'Hospi',
+            text: 'Aapka',
             style: GoogleFonts.poppins(
               color: Config.primaryColor,
               fontSize: 24,
@@ -57,7 +57,7 @@ class _CoronaTrackerState extends State<CoronaTracker> {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: '-care',
+                text: 'vaidya',
                 style: GoogleFonts.poppins(
                   color: Config.redColor,
                   fontSize: 24,
@@ -80,8 +80,7 @@ class _CoronaTrackerState extends State<CoronaTracker> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                _buildMainTitle(),
-                _buildMyLocation(),
+                _buildMainTitle()
               ],
             ),
             SizedBox(height: 36),
@@ -129,19 +128,15 @@ class _CoronaTrackerState extends State<CoronaTracker> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   StatsCard(
-                      country: 'Kenya', infected: 203, dead: 4, cured: 15),
+                      country: 'Worldwide', infected: "8.8M", dead: "465K", cured: "4.37M"),
                   StatsCard(
-                      country: 'Uganda', infected: 2043, dead: 4, cured: 15),
+                      country: 'US', infected: "2.3M", dead: "122K", cured: "716K"),
                   StatsCard(
-                      country: 'Tanzania', infected: 23, dead: 4, cured: 15),
-                  StatsCard(country: 'US', infected: 212, dead: 4, cured: 15),
-                  StatsCard(country: 'UK', infected: 34, dead: 4, cured: 15),
+                      country: 'Brazil', infected: "1.07M", dead: "50K", cured: "543K"),
+                  StatsCard(country: 'Russia', infected: "585K", dead: "8K", cured: "340K"),
+                  StatsCard(country: 'India', infected: "410K", dead: "13K", cured: "228K"),
                   StatsCard(
-                      country: 'Russia', infected: 75, dead: 4, cured: 15),
-                  StatsCard(
-                      country: 'China', infected: 203, dead: 4, cured: 15),
-                  StatsCard(
-                      country: 'Italy', infected: 203, dead: 4, cured: 15),
+                      country: 'UK', infected: "303K", dead: "42.5K", cured: "-"),
                 ],
               ),
             ),

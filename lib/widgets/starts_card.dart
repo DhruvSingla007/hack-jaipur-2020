@@ -4,7 +4,7 @@ import 'package:hackjaipur2020/config.dart';
 
 class StatsCard extends StatelessWidget {
   final String country;
-  final int infected, dead, cured;
+  final String infected, dead, cured;
 
   const StatsCard(
       {Key key,
