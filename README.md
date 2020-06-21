@@ -49,12 +49,35 @@ samples, guidance on mobile development, and a full API reference.
 
 <br>
 
-## 💻&nbsp; Download our app from the link below:
+## 📽&nbsp; Link for the Video Demo
 
-[Google Drive](https://drive.google.com/file/d/1YFlJbIxzckjHmrvzxY3ist3d6MX3qSzT/view?usp=sharing)
+[YouTube](https://www.youtube.com/watch?v=xHoPp9_jX0Y&t=83s)
 
 <br>
 
-## 📽&nbsp; Link for the Video Demo
+### ❤️&nbsp; Project Contributor
 
-[Google Drive](https://drive.google.com/file/d/1O_G5BGP7VAbwcal1Hj8ZJkXe4NjBQ_Mp/view?usp=sharing)
+<a href="https://github.com/Harshit564"><img src="https://avatars1.githubusercontent.com/u/47476857?s=400&u=8b1d57f71964ea8821662524e171a16e4fcc5c79&v=4" width=150px height=150px /></a>                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                        **[Harshit Singh](https://www.linkedin.com/in/harshit-singh-lko//)**                                                                                                                                        |
+|<a href="https://www.linkedin.com/in/harshit-singh-lko"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> |
+
+
+[![GitHub followers](https://img.shields.io/github/followers/Harshit564?label=Follow&style=social)](https://github.com/Harshit564/)
+
+[![ForTheBadge built-with-love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Harshit564/)
+
+![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+
+---
+<a href="https://github.com/DhruvSingla007"><img src="https://avatars3.githubusercontent.com/u/46241019?s=400&u=8b6cc353e4ffe212585db93ee09bc118e1e2748d&v=4" width=150px height=150px /></a>                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                        **[Dhruv Singla](https://www.linkedin.com/in/dhruv-singla-116598135/)**                                                                                                                                        |
+|<a href="https://www.linkedin.com/in/dhruv-singla-116598135/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> | 
+
+<br>
+
+<a href="https://github.com/Nisha2701"><img src="https://avatars2.githubusercontent.com/u/60098687?s=400&v=4" width=150px height=150px /><a>                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                        **[Nisha](https://www.linkedin.com/in/nisha-88b887191/)**                                                                                                                                        |
+|<a href="https://www.linkedin.com/in/nisha-88b887191/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a> |
