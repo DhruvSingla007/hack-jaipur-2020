@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:hackjaipur2020/pages/extras_page.dart';
 import 'package:hackjaipur2020/pages/relax_zone_page.dart';
+import 'package:hackjaipur2020/qnascreens/home_screen.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
       'appBarTitle': 'Dashboard',
     },
     {
-      'page': DiscussionsPage(),
+      'page': ChatHomeScreen(),
       'appBarTitle': 'Discussions',
     },
     {

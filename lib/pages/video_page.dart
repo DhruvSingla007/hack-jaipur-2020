@@ -41,14 +41,27 @@ class _VideoScreenState extends State<VideoScreen> {
       ),
       body: Container(
         child: Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
-          child: YoutubePlayer(
-            controller: _controller,
-            showVideoProgressIndicator: true,
-            onReady: () {
-              print('Player is ready.');
-            },
-          ),
+          padding: const EdgeInsets.only(top: 30.0, left: 12.0, right: 12.0),
+          child: Column(children: <Widget>[
+            Center(
+              child: Image.asset(
+                'assets/images/video.png',
+                fit: BoxFit.contain,
+                width: 200,
+                height: 150,
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+              onReady: () {
+                print('Player is ready.');
+              },
+            ),
+          ]),
         ),
       ),
     );

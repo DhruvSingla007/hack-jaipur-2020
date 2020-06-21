@@ -35,7 +35,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
       padding: EdgeInsets.all(20.0),
       height: 100.0,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Color(0xffCBE7EA),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -61,7 +61,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
                   _channel.title,
                   style: TextStyle(
                     fontFamily: 'OpenSans',
-                    color: Colors.greenAccent,
+                    color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -71,7 +71,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
                   '${_channel.subscriberCount} subscribers',
                   style: TextStyle(
                     fontFamily: 'OpenSans',
-                    color: Colors.greenAccent[100],
+                    color: Colors.black38,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -98,7 +98,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
         padding: EdgeInsets.all(10.0),
         height: 140.0,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Color(0xffCBE7EA),
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -119,7 +119,7 @@ class _ExtrasPageState extends State<ExtrasPage> {
                 video.title,
                 style: TextStyle(
                   fontFamily: 'OpenSans',
-                  color: Colors.greenAccent,
+                  color: Colors.black,
                   fontSize: 14.0,
                 ),
               ),
