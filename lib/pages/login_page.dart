@@ -7,6 +7,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hackjaipur2020/pages/signup_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'home_page.dart';
+
 class LoginPage extends StatefulWidget {
   static const String routeName = "/login-page";
 
@@ -96,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => null));//homepage need to added
+              builder: (context) => HomePage()));//homepage need to added
     } else {
       Fluttertoast.showToast(msg: "Sign in fail");
       this.setState(() {

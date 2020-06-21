@@ -2,7 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hackjaipur2020/pages/home_page.dart';
+
+import 'home_page.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key}) : super(key: key);
@@ -274,13 +275,13 @@ class _SignUpPageState extends State<SignUpPage> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => {
-          if (_signUpFormKey.currentState // ignore: sdk_version_ui_as_code
+        onPressed: () =>
+          (_signUpFormKey.currentState // ignore: sdk_version_ui_as_code
               .validate())
-            {
-              if (_passwordInputController.text.toString().trim() ==
+            ?
+          ((_passwordInputController.text.toString().trim() ==
                   _passwordConfirmInputController.text.toString().trim())
-                {
+                ?
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                         email: _emailInputController.text.toString().trim(),
@@ -299,16 +300,16 @@ class _SignUpPageState extends State<SignUpPage> {
                                     Navigator.pushAndRemoveUntil(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => null),//homepage need to added
+                                            builder: (context) => HomePage()),//homepage need to added
                                         (_) => false),
                                     _nameInputController.clear(),
                                     _emailInputController.clear(),
                                     _passwordInputController.clear(),
                                     _passwordConfirmInputController.clear(),
                                   }))
-                }
-            }
-        },
+        : print('null'))
+              : print('null'),
+
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),

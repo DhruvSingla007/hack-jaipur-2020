@@ -14,7 +14,7 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -53,6 +53,10 @@ dependencies:
   flutter_cache_manager:
   search_page: ^1.2.0
   google_maps_flutter: ^0.5.11
+  rxdart: ^0.24.1
+  google_fonts: ^1.1.0
+  flutter_svg: ^0.17.4
+  quiver: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +78,7 @@ flutter:
   assets:
     - assets/images/
     - assets/videos/intro.mp4
+    - assets/svg/
   #  - images/a_dot_ham.jpeg
 
   fonts:

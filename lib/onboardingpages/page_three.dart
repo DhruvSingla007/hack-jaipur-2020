@@ -46,7 +46,7 @@ class _PageThreeState extends State<PageThree> {
       _userRef.document(user.uid).get().then((DocumentSnapshot snapshot){
 
         if(snapshot.data != null)
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => null)); //home page need to added
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())); //home page need to added
         });
 
     }

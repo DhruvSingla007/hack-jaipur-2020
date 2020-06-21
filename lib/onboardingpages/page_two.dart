@@ -91,7 +91,7 @@ class _PageTwoState extends State<PageTwo> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => null)
+                                    builder: (context) => HomePage())
                             );// homepage need to be added
                         },
                         child: Text(

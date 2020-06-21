@@ -16,6 +16,7 @@ import 'package:hackjaipur2020/pages/splash_page.dart';
 import 'minigameminesweeper/minesweeper.dart';
 
 void main(){
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 

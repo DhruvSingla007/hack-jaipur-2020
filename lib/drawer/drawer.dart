@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:hackjaipur2020/about/home_screen.dart';
 import 'package:hackjaipur2020/pages/about_page.dart';
 import 'package:hackjaipur2020/pages/discussions.dart';
 import 'package:hackjaipur2020/pages/my_profile_page.dart';
@@ -265,7 +266,7 @@ This is to check the offset of the menu Icon in top left corner.
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AboutPage(),
+                  builder: (context) => HomeScreen(),
                 ),
               );
               // Update the state of the app.

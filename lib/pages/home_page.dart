@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
             _pages[_selectedPageIndex]['appBarTitle'],
             style: TextStyle(
               fontFamily: 'OpenSans',
-                color: Colors.greenAccent,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0),
           ),
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () => _launchgmail(),
               icon: Icon(
                 FlutterIcons.gmail_mco,
-                color: Colors.white,
+                color: Colors.black,
               ),
             )
           ],
