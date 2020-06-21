@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hackjaipur2020/pages/home_page.dart';
 
 import 'package:hackjaipur2020/utils/info.dart';
 import 'package:hackjaipur2020/utils/mypainter.dart';
@@ -171,7 +172,7 @@ class _PageThreeState extends State<PageThree> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => null));//homepage need to added
+                                  builder: (context) => HomePage()));//homepage need to added
                       },
                       child: Text(
                         "Get Started!",

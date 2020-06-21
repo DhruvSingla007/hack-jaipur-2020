@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:hackjaipur2020/pages/home_page.dart';
 import 'package:hackjaipur2020/pages/login_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -40,7 +41,7 @@ class _PageOneState extends State<PageOne> {
       _userRef.document(user.uid).get().then((DocumentSnapshot snapshot) {
         if (snapshot.data != null)
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => null)); // home page need to added
+              context, MaterialPageRoute(builder: (context) => HomePage())); // home page need to added
       });
     }
   }

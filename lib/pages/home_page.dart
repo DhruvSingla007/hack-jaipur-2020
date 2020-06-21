@@ -1,4 +1,5 @@
 //import 'package:hackjaipur2020/drawer/drawer.dart';
+import 'package:hackjaipur2020/drawer/drawer.dart';
 import 'package:hackjaipur2020/pages/discussions.dart';
 //import 'package:hackjaipur2020/pages/relax_zone_page.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +7,12 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:hackjaipur2020/pages/extras_page.dart';
+import 'package:hackjaipur2020/pages/relax_zone_page.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import 'dashboard_page.dart';
+import 'dashboard_page.dart';
 import 'extras_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -79,10 +82,10 @@ class _HomePageState extends State<HomePage> {
 
   _HomePageState({Key key, @required this.currentUserId});
   final List<Map<String, Object>> _pages = [
-//    {
-//      'page': DashboardPage(),
-//      'appBarTitle': 'Dashboard',
-//    },
+    {
+      'page': DashboardPage(),
+      'appBarTitle': 'Dashboard',
+    },
     {
       'page': DiscussionsPage(),
       'appBarTitle': 'Discussions',
@@ -91,10 +94,10 @@ class _HomePageState extends State<HomePage> {
       'page': ExtrasPage(),
       'appBarTitle': 'Extras',
     },
-//    {
-//      'page': RelaxZonePage(),
-//      'appBarTitle': 'Relax Zone',
-//    },
+    {
+      'page': RelaxZonePage(),
+      'appBarTitle': 'Relax Zone',
+    },
   ];
 
   int _selectedPageIndex = 0;
@@ -112,7 +115,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          //backgroundColor: Colors.black,
           title: Text(
             _pages[_selectedPageIndex]['appBarTitle'],
             style: TextStyle(
@@ -132,7 +135,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-//        drawer: GuillotineMenu(),
+        drawer: GuillotineMenu(),
         body: _pages[_selectedPageIndex]['page'],
         bottomNavigationBar: Container(
           height: 60,

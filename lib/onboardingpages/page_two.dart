@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:hackjaipur2020/pages/home_page.dart';
 import 'package:hackjaipur2020/pages/login_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,7 +40,7 @@ class _PageTwoState extends State<PageTwo> {
       _userRef.document(user.uid).get().then((DocumentSnapshot snapshot) {
         if (snapshot.data != null)
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => null));//homepage need to added
+              context, MaterialPageRoute(builder: (context) => HomePage()));//homepage need to added
       });
     }
   }
