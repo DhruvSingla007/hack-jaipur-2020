@@ -8,6 +8,7 @@ import 'package:hackjaipur2020/pages/my_profile_page.dart';
 import 'package:hackjaipur2020/pages/near_hospital_page.dart';
 import 'package:link/link.dart';
 import 'package:share/share.dart';
+import 'package:hackjaipur2020/pages/corona_tracker.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GuillotineMenu extends StatefulWidget {
@@ -279,7 +280,13 @@ This is to check the offset of the menu Icon in top left corner.
                   color: Colors.white,
                 ),
               ),
-              onTap: () => _onSettingsButtonsPressed(context)),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CoronaTracker(),
+                ),
+              ),
+          ),
           ListTile(
             leading: Icon(Icons.local_hospital, color: Colors.white),
             title: Text(
