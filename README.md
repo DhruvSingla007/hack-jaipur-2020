@@ -45,19 +45,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 📷&nbsp; Screenshots
 
-<img src="Screenshots/1.jpeg" width=240>  <img src="Screenshots/2.jpeg" width=240>  <img src="Screenshots/3.jpeg" width=240>
-
-<img src="Screenshots/4.jpeg" width=240>  <img src="Screenshots/5.jpeg" width=240>  <img src="Screenshots/6.jpeg" width=240>
-
-<img src="Screenshots/7.jpeg" width=240>  <img src="Screenshots/8.jpeg" width=240>  <img src="Screenshots/9.jpeg" width=240>
-
-<img src="Screenshots/10.jpeg" width=240>  <img src="Screenshots/11.jpeg" width=240>  <img src="Screenshots/12.jpeg" width=240>
-
-<img src="Screenshots/13.jpeg" width=240>  <img src="Screenshots/14.jpeg" width=240>  <img src="Screenshots/15.jpeg" width=240>
-
-<img src="Screenshots/16.jpeg" width=240>  <img src="Screenshots/18.jpeg" width=240>  <img src="Screenshots/18.jpeg" width=240>
-
-<img src="Screenshots/19.jpeg" width=240>  <img src="Screenshots/20.jpeg" width=240>  <img src="Screenshots/21.jpeg" width=240>
+[Google Drive](https://drive.google.com/drive/folders/1-sGdGiSpPj9aVyV63lkOmHf7PQ-4zroP?usp=sharing)
 
 <br>
 
