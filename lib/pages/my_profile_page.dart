@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'login_page.dart';
@@ -18,7 +19,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
   TextEditingController controllerNickname;
   TextEditingController controllerAboutMe;
 
-  SharedPreferences prefs;
+
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+  SharedPreferences preferences;
 
   String id = '';
   String email = "";
@@ -31,20 +34,13 @@ class _MyProfilePageState extends State<MyProfilePage> {
   final FocusNode focusNodeNickname = new FocusNode();
   final FocusNode focusNodeAboutMe = new FocusNode();
 
-  @override
-  void initState() {
-    super.initState();
-    readLocal();
-    _getInfo();
-  }
-
   void readLocal() async {
-    prefs = await SharedPreferences.getInstance();
-    id = prefs.getString('id') ?? '';
-    userName = prefs.getString('userName') ?? '';
-    aboutMe = prefs.getString('aboutMe') ?? '';
-    email = prefs.getString('email') ?? '';
-    photoUrl = prefs.getString('photoUrl') ?? '';
+    preferences = await SharedPreferences.getInstance();
+    id = preferences.getString('id') ?? '';
+    userName = preferences.getString('userName') ?? '';
+    aboutMe = preferences.getString('aboutMe') ?? '';
+    email = preferences.getString('email') ?? '';
+    photoUrl = preferences.getString('photoUrl') ?? '';
 
     controllerNickname = new TextEditingController(text: userName);
     controllerAboutMe = new TextEditingController(text: aboutMe);
@@ -52,10 +48,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
     // Force refresh input
     setState(() {});
   }
-
-  final GoogleSignIn googleSignIn = GoogleSignIn();
-
-  SharedPreferences preferences;
 
   Future<Null> handleSignOut() async {
     this.setState(() {
@@ -69,6 +61,53 @@ class _MyProfilePageState extends State<MyProfilePage> {
     this.setState(() {
       isLoading = false;
     });
+  }
+
+  _onAlertButtonsPressed(context) {
+    Alert(
+      style: AlertStyle(
+        backgroundColor: Colors.white,
+        titleStyle: TextStyle(fontFamily: 'Montserrat', color: Colors.black),
+        descStyle: TextStyle(fontFamily: 'Montserrat', color: Colors.black),
+      ),
+      context: context,
+      type: AlertType.warning,
+      title: "LOG OUT",
+      desc: "Do you want to log out your ID ?",
+      buttons: [
+        DialogButton(
+          child: Text(
+            "Cancel",
+            style: TextStyle(
+                fontFamily: 'Montserrat', color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () => Navigator.pop(context),
+          gradient: LinearGradient(colors: [
+            Color(0xFF20BF55),
+            Color(0xFF01BAEF),
+          ]),
+        ),
+        DialogButton(
+          child: Text(
+            "Log Out",
+            style: TextStyle(
+                fontFamily: 'Montserrat', color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () {
+            handleSignOut().then((val) {
+              preferences.clear().then((val) {
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LoginPage()), (e) => false);
+                //Navigator.pushNamed(context, LoginPage.routeName);
+              });
+            });
+          },
+          gradient: LinearGradient(colors: [
+            Color.fromRGBO(116, 116, 191, 1.0),
+            Color.fromRGBO(52, 138, 199, 1.0)
+          ]),
+        )
+      ],
+    ).show();
   }
 
   Widget _buildProfileCard(String text) {
@@ -115,13 +154,19 @@ class _MyProfilePageState extends State<MyProfilePage> {
   Future<void> _getInfo() async {
     preferences = await SharedPreferences.getInstance();
     setState(() {
-      userName = preferences.getString("name");
+      userName = preferences.getString("userName");
       email = preferences.getString("email");
       print(userName);
       print(email);
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    readLocal();
+    _getInfo();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,25 +174,21 @@ class _MyProfilePageState extends State<MyProfilePage> {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.1),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        //backgroundColor: Colors.black,
         title: Text(
           "Profile Page",
           style: TextStyle(
               fontFamily: 'OpenSans',
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
-              color: Colors.greenAccent
+              color: Colors.black
           ),
         ),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.exit_to_app),
-            onPressed: () {
-              handleSignOut().then((val) {
-                Navigator.pushNamed(context, LoginPage.routeName);
-              });
-            },
+            onPressed: () => _onAlertButtonsPressed(context),
             tooltip: "Log Out",
           ),
         ],

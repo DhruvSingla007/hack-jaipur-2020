@@ -71,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
           'Quizzler',
           style: TextStyle(
               fontFamily: 'OpenSans',
-            color: Colors.greenAccent,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 20.0
           ),

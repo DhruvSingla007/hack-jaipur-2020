@@ -41,7 +41,7 @@ class _MatchPageState extends State<MatchPage> with TickerProviderStateMixin {
           'Fiar Game',
           style: TextStyle(
               fontFamily: 'OpenSans',
-            color: Colors.greenAccent,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 20.0
           ),

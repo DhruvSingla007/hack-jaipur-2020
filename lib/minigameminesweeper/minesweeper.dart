@@ -141,12 +141,12 @@ class MinesweeperGameState extends State<MinesweeperGame> {
             'Mine Sweeper',
             style: TextStyle(
                 fontFamily: 'OpenSans',
-                color: Colors.greenAccent,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0),
           ),
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(45.0),
+            preferredSize: Size.fromHeight(50.0),
             child: Row(children: <Widget>[
               SizedBox(
                 width: 10,

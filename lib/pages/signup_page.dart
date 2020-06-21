@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'home_page.dart';
+import 'login_page.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key}) : super(key: key);
@@ -329,6 +330,37 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  Widget _buildSigninBtn() {
+    return GestureDetector(
+      onTap: () => Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage())),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: 'Already have an Account? ',
+              style: TextStyle(
+                fontFamily: 'OpenSans',
+                color: Colors.black,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            TextSpan(
+              text: 'Sign In',
+              style: TextStyle(
+                fontFamily: 'OpenSans',
+                color: Colors.black,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -406,6 +438,8 @@ class _SignUpPageState extends State<SignUpPage> {
                               height: 30.0,
                             ),
                             _buildSignUpBtn(),
+
+                            _buildSigninBtn()
                           ],
                         ),
                       ),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-//AIzaSyApjFvgIoBDAor1gixmmu9exDGWh00oBNg
-//
-
 class NearHospital extends StatefulWidget {
   final Key _mapKey = UniqueKey();
 
@@ -19,7 +16,7 @@ class _NearHospitalState extends State<NearHospital> {
             title: const Text(
           'NearBy Hospitals',
           style: TextStyle(
-              color: Colors.greenAccent,
+              color: Colors.black,
               fontSize: 20.0,
               fontWeight: FontWeight.bold),
         ),
