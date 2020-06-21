@@ -276,41 +276,38 @@ class _SignUpPageState extends State<SignUpPage> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () =>
-          (_signUpFormKey.currentState // ignore: sdk_version_ui_as_code
-              .validate())
-            ?
-          ((_passwordInputController.text.toString().trim() ==
-                  _passwordConfirmInputController.text.toString().trim())
-                ?
-                  FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                        email: _emailInputController.text.toString().trim(),
-                        password:
-                            _passwordInputController.text.toString().trim(),
-                      )
-                      .then((currentUser) => Firestore.instance
-                              .collection("users")
-                              .document(_emailInputController.text.toString().trim())
-                              .setData({
-                            //"uid": currentUser.toString(),
-                            "name": _nameInputController.text.toString().trim(),
-                            "email":
-                                _emailInputController.text.toString().trim(),
-                          }).then((result) => {
-                                    Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => HomePage()),//homepage need to added
-                                        (_) => false),
-                                    _nameInputController.clear(),
-                                    _emailInputController.clear(),
-                                    _passwordInputController.clear(),
-                                    _passwordConfirmInputController.clear(),
-                                  }))
-        : print('null'))
-              : print('null'),
-
+        onPressed: () => (_signUpFormKey
+                .currentState // ignore: sdk_version_ui_as_code
+                .validate())
+            ? ((_passwordInputController.text.toString().trim() ==
+                    _passwordConfirmInputController.text.toString().trim())
+                ? FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(
+                      email: _emailInputController.text.toString().trim(),
+                      password: _passwordInputController.text.toString().trim(),
+                    )
+                    .then((currentUser) => Firestore.instance
+                            .collection("users")
+                            .document(
+                                _emailInputController.text.toString().trim())
+                            .setData({
+                          //"uid": currentUser.toString(),
+                          "name": _nameInputController.text.toString().trim(),
+                          "email": _emailInputController.text.toString().trim(),
+                        }).then((result) => {
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()),
+                                      //homepage need to added
+                                      (_) => false),
+                                  _nameInputController.clear(),
+                                  _emailInputController.clear(),
+                                  _passwordInputController.clear(),
+                                  _passwordConfirmInputController.clear(),
+                                }))
+                : print('null'))
+            : print('null'),
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -438,7 +435,6 @@ class _SignUpPageState extends State<SignUpPage> {
                               height: 30.0,
                             ),
                             _buildSignUpBtn(),
-
                             _buildSigninBtn()
                           ],
                         ),

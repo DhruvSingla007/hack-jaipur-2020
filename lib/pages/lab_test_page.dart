@@ -7,7 +7,8 @@ class LabTest {
   final String labName;
   final String labDescription;
   final String webUrl;
-  LabTest(this.labName,this.labDescription,this.webUrl,this.imageUrl);
+
+  LabTest(this.labName, this.labDescription, this.webUrl, this.imageUrl);
 }
 
 class LabTestPage extends StatefulWidget {
@@ -16,20 +17,37 @@ class LabTestPage extends StatefulWidget {
 }
 
 class _LabTestPageState extends State<LabTestPage> {
-
   static List<LabTest> name = [
-    LabTest('Mike','lab1','https://www.houseofdiagnostics.com/online-reports/','assets/images/booksImage.jpeg'),
-    LabTest('Todd','lab2','https://www.houseofdiagnostics.com/online-reports/','assets/images/booksImage.jpeg'),
-    LabTest('Ahmad','lab3','https://www.houseofdiagnostics.com/online-reports/','assets/images/booksImage.jpeg'),
-    LabTest('Anthony','lab4','https://www.houseofdiagnostics.com/online-reports/','assets/images/booksImage.jpeg'),
-    LabTest('Annette','lab5','https://www.houseofdiagnostics.com/online-reports/','assets/images/booksImage.jpeg'),
+    LabTest(
+        'Mike',
+        'lab1',
+        'https://www.houseofdiagnostics.com/online-reports/',
+        'assets/images/booksImage.jpeg'),
+    LabTest(
+        'Todd',
+        'lab2',
+        'https://www.houseofdiagnostics.com/online-reports/',
+        'assets/images/booksImage.jpeg'),
+    LabTest(
+        'Ahmad',
+        'lab3',
+        'https://www.houseofdiagnostics.com/online-reports/',
+        'assets/images/booksImage.jpeg'),
+    LabTest(
+        'Anthony',
+        'lab4',
+        'https://www.houseofdiagnostics.com/online-reports/',
+        'assets/images/booksImage.jpeg'),
+    LabTest(
+        'Annette',
+        'lab5',
+        'https://www.houseofdiagnostics.com/online-reports/',
+        'assets/images/booksImage.jpeg'),
   ];
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.5),
       appBar: new AppBar(
         title: new Text(
           'Lab Test',
@@ -52,7 +70,7 @@ class _LabTestPageState extends State<LabTestPage> {
             );
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Color(0xff5cb3bc),
         tooltip: 'Search Lab Reports',
         onPressed: () => showSearch(
           context: context,
@@ -79,7 +97,10 @@ class _LabTestPageState extends State<LabTestPage> {
             ),
           ),
         ),
-        child: Icon(Icons.search,color: Colors.black,),
+        child: Icon(
+          Icons.search,
+          color: Colors.black,
+        ),
       ),
     );
   }

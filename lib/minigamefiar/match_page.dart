@@ -48,9 +48,8 @@ class _MatchPageState extends State<MatchPage> with TickerProviderStateMixin {
         ),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey[700],
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top:30.0, left: 15,right: 15),
         child: Flex(
           direction: Axis.vertical,
           mainAxisSize: MainAxisSize.max,

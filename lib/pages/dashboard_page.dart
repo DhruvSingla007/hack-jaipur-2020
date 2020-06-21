@@ -64,14 +64,12 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.black87,
       body: Stack(
         children: <Widget>[
           SingleChildScrollView(
@@ -99,14 +97,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   children: <Widget>[
                                     Icon(
                                       Icons.face,
-                                      color: Colors.greenAccent,
+                                      color: Color(0xff5cb3bc),
                                       size: 95.0,
                                     ),
                                     Text(
                                       'Talk to Doctor',
                                       style: TextStyle(
                                           fontFamily: 'OpenSans',
-                                          color: Colors.white, fontSize: 12.0),
+                                          color: Colors.black,
+                                          fontSize: 12.0),
                                     ),
                                   ],
                                 ),
@@ -123,14 +122,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   children: <Widget>[
                                     Icon(
                                       Icons.local_hospital,
-                                      color: Colors.greenAccent,
+                                      color: Color(0xff5cb3bc),
                                       size: 75.0,
                                     ),
                                     Text(
                                       'Hospitals',
                                       style: TextStyle(
                                           fontFamily: 'OpenSans',
-                                          color: Colors.white, fontSize: 12.0),
+                                          color: Colors.black,
+                                          fontSize: 12.0),
                                     ),
                                   ],
                                 ),
@@ -147,14 +147,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   children: <Widget>[
                                     Icon(
                                       Icons.monetization_on,
-                                      color: Colors.greenAccent,
+                                      color: Color(0xff5cb3bc),
                                       size: 75.0,
                                     ),
                                     Text(
                                       'Medicines',
                                       style: TextStyle(
                                           fontFamily: 'OpenSans',
-                                          color: Colors.white, fontSize: 12.0),
+                                          color: Colors.black,
+                                          fontSize: 12.0),
                                     ),
                                   ],
                                 ),
@@ -171,14 +172,15 @@ class _DashboardPageState extends State<DashboardPage> {
                                   children: <Widget>[
                                     Icon(
                                       Icons.cancel,
-                                      color: Colors.greenAccent,
+                                      color: Color(0xff5cb3bc),
                                       size: 75.0,
                                     ),
                                     Text(
                                       'Lab Tests',
                                       style: TextStyle(
                                           fontFamily: 'OpenSans',
-                                          color: Colors.white, fontSize: 12.0),
+                                          color: Colors.black,
+                                          fontSize: 12.0),
                                     ),
                                   ],
                                 ),
@@ -211,7 +213,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
                             letterSpacing: 1.5,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -258,7 +260,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                   'Below 40',
                                                   style: TextStyle(
                                                       fontFamily: 'OpenSans',
-                                                      color: Colors.white,
+                                                      color: Colors.black,
                                                       fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -270,7 +272,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'year',
                                                   style: TextStyle(
-                                                      color: Colors.grey[100],
+                                                      color: Colors.black54,
                                                       fontSize: 10),
                                                 ),
                                               ),
@@ -343,7 +345,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'Above 40',
                                                   style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Colors.black,
                                                       fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -355,7 +357,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'year',
                                                   style: TextStyle(
-                                                      color: Colors.grey[100],
+                                                      color: Colors.black54,
                                                       fontSize: 10),
                                                 ),
                                               ),
@@ -436,7 +438,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'Below 40',
                                                   style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Colors.black,
                                                       fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -448,7 +450,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'year',
                                                   style: TextStyle(
-                                                      color: Colors.grey[100],
+                                                      color: Colors.black54,
                                                       fontSize: 10),
                                                 ),
                                               ),
@@ -522,7 +524,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'Above 40',
                                                   style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Colors.black,
                                                       fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -534,7 +536,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                 child: Text(
                                                   'year',
                                                   style: TextStyle(
-                                                      color: Colors.grey[100],
+                                                      color: Colors.black54,
                                                       fontSize: 10),
                                                 ),
                                               ),
@@ -578,12 +580,13 @@ class _DashboardPageState extends State<DashboardPage> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border:
-                              Border.all(width: 1.0, color: Colors.greenAccent),
+                              Border.all(width: 1.0, color: Color(0xff5cb3bc)),
                           borderRadius: BorderRadius.all(Radius.circular(70.0)),
                         ),
                         child: Center(
                           child: Link(
-                            url: 'https://www.houseofdiagnostics.com/online-reports/',
+                            url:
+                                'https://www.houseofdiagnostics.com/online-reports/',
                             onError: _showErrorSnackBar,
                             child: Text("See all Lab Test >",
                                 style: TextStyle(
@@ -602,7 +605,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
                             letterSpacing: 1.5,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -690,16 +693,20 @@ class _DashboardPageState extends State<DashboardPage> {
                                     color: Colors.black26,
                                   ),
                                   GestureDetector(
-                                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionsPage())),
+                                    onTap: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DiscussionsPage())),
                                     child: Container(
                                       alignment: Alignment.centerLeft,
                                       height: _height / 20.0,
-                                      padding:
-                                          EdgeInsets.only(top: 10.0, left: 15.0),
+                                      padding: EdgeInsets.only(
+                                          top: 10.0, left: 15.0),
                                       child: Text(
                                         'Get Advice',
                                         style: TextStyle(
-                                            color: Colors.green,
+                                            color: Color(0xff5cb3bc),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 12.0),
                                         textAlign: TextAlign.left,
@@ -791,16 +798,20 @@ class _DashboardPageState extends State<DashboardPage> {
                                     color: Colors.black26,
                                   ),
                                   GestureDetector(
-                                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionsPage())),
+                                    onTap: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DiscussionsPage())),
                                     child: Container(
                                       alignment: Alignment.centerLeft,
                                       height: _height / 20.0,
-                                      padding:
-                                          EdgeInsets.only(top: 10.0, left: 15.0),
+                                      padding: EdgeInsets.only(
+                                          top: 10.0, left: 15.0),
                                       child: Text(
                                         'Get Advice',
                                         style: TextStyle(
-                                            color: Colors.green,
+                                            color: Color(0xff5cb3bc),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 12.0),
                                         textAlign: TextAlign.left,
@@ -822,7 +833,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
                             letterSpacing: 1.5,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -851,7 +862,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                               'Depression',
                                               style: TextStyle(
                                                   color: Colors.indigoAccent,
-                                                  fontSize: 15.0,
+                                                  fontSize: 12.0,
                                                   fontWeight: FontWeight.w700),
                                               maxLines: 1,
                                             ),
@@ -912,7 +923,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                       color: Colors.black26,
                                     ),
                                     GestureDetector(
-                                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LabTestPage())),
+                                      onTap: () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LabTestPage())),
                                       child: Container(
                                         alignment: Alignment.centerLeft,
                                         height: _height / 20.0,
@@ -921,7 +936,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         child: Text(
                                           'Take Test',
                                           style: TextStyle(
-                                              color: Colors.green,
+                                              color: Color(0xff5cb3bc),
                                               fontWeight: FontWeight.w600,
                                               fontSize: 12.0),
                                           textAlign: TextAlign.left,
@@ -955,7 +970,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                               'Thyroid Check',
                                               style: TextStyle(
                                                   color: Colors.brown,
-                                                  fontSize: 15.0,
+                                                  fontSize: 12.0,
                                                   fontWeight: FontWeight.w700),
                                             ),
                                           ),
@@ -1012,16 +1027,20 @@ class _DashboardPageState extends State<DashboardPage> {
                                       color: Colors.black26,
                                     ),
                                     GestureDetector(
-                                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LabTestPage())),
+                                      onTap: () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LabTestPage())),
                                       child: Container(
                                         height: _height / 20.0,
                                         alignment: Alignment.centerLeft,
-                                        padding:
-                                            EdgeInsets.only(top: 0.0, left: 15.0),
+                                        padding: EdgeInsets.only(
+                                            top: 10.0, left: 15.0),
                                         child: Text(
                                           'Take Test',
                                           style: TextStyle(
-                                              color: Colors.green,
+                                              color: Color(0xff5cb3bc),
                                               fontWeight: FontWeight.w600,
                                               fontSize: 12.0),
                                           textAlign: TextAlign.left,
@@ -1044,7 +1063,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
                             letterSpacing: 1.5,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -1140,7 +1159,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                                   textAlign: TextAlign.center,
                                                 ),
                                                 InkWell(
-                                                  onTap: () => launch('https://www.free-ebooks.net/health'),
+                                                  onTap: () => launch(
+                                                      'https://www.free-ebooks.net/health'),
                                                   child: Container(
                                                     alignment:
                                                         Alignment.bottomCenter,
@@ -1254,7 +1274,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                                   textAlign: TextAlign.center,
                                                 ),
                                                 InkWell(
-                                                  onTap: () => launch('https://www.free-ebooks.net/health'),
+                                                  onTap: () => launch(
+                                                      'https://www.free-ebooks.net/health'),
                                                   child: Container(
                                                     alignment:
                                                         Alignment.bottomCenter,
@@ -1287,7 +1308,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border:
-                              Border.all(width: 1.0, color: Colors.greenAccent),
+                              Border.all(width: 1.0, color: Color(0xff5cb3bc)),
                           borderRadius: BorderRadius.all(Radius.circular(70.0)),
                         ),
                         child: Center(
@@ -1311,7 +1332,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
                             letterSpacing: 1.5,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -1402,7 +1423,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                   textAlign: TextAlign.left,
                                 ),
                                 trailing: InkWell(
-                                  onTap: () => launch(('https://blog.feedspot.com/doctor_blogs/')),
+                                  onTap: () => launch(
+                                      ('https://blog.feedspot.com/doctor_blogs/')),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white,
                                     child: ClipOval(
@@ -1506,7 +1528,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                   textAlign: TextAlign.left,
                                 ),
                                 trailing: InkWell(
-                                  onTap: () => launch('https://blog.feedspot.com/doctor_blogs/'),
+                                  onTap: () => launch(
+                                      'https://blog.feedspot.com/doctor_blogs/'),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white,
                                     child: ClipOval(
@@ -1531,7 +1554,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border:
-                              Border.all(width: 1.0, color: Colors.greenAccent),
+                              Border.all(width: 1.0, color: Color(0xff5cb3bc)),
                           borderRadius: BorderRadius.all(Radius.circular(70.0)),
                         ),
                         child: Center(
@@ -1546,6 +1569,9 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      )
                     ],
                   ),
                 ),
@@ -1560,12 +1586,12 @@ class _DashboardPageState extends State<DashboardPage> {
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20)),
               child: Container(
-                height: _height / 5,
+                height: _height / 7,
                 width: _width,
-                color: Colors.green,
+                color: Color(0xff5cb3bc),
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: 45.0, left: 20.0, right: 20.0, bottom: 5.0),
+                      top: 12.0, left: 20.0, right: 20.0, bottom: 5.0),
                   child: Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1573,7 +1599,10 @@ class _DashboardPageState extends State<DashboardPage> {
                         Column(
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionsPage())),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DiscussionsPage())),
                               child: Container(
                                 padding: EdgeInsets.only(top: 20.0),
                                 child: Icon(
@@ -1596,7 +1625,10 @@ class _DashboardPageState extends State<DashboardPage> {
                         Column(
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HospitalsPage())),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HospitalsPage())),
                               child: Container(
                                 padding: EdgeInsets.only(top: 20.0),
                                 child: Icon(
@@ -1619,7 +1651,10 @@ class _DashboardPageState extends State<DashboardPage> {
                         Column(
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MedicinesPage())),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MedicinesPage())),
                               child: Container(
                                 padding: EdgeInsets.only(top: 20.0),
                                 child: Icon(
@@ -1642,7 +1677,10 @@ class _DashboardPageState extends State<DashboardPage> {
                         Column(
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LabTestPage())),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LabTestPage())),
                               child: Container(
                                 padding: EdgeInsets.only(top: 20.0),
                                 child: Icon(

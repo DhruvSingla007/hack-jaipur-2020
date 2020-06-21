@@ -40,7 +40,9 @@ class _PageTwoState extends State<PageTwo> {
       _userRef.document(user.uid).get().then((DocumentSnapshot snapshot) {
         if (snapshot.data != null)
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => HomePage()));//homepage need to added
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomePage())); //homepage need to added
       });
     }
   }
@@ -91,8 +93,8 @@ class _PageTwoState extends State<PageTwo> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomePage())
-                            );// homepage need to be added
+                                    builder: (context) =>
+                                        HomePage())); // homepage need to be added
                         },
                         child: Text(
                           'Skip',

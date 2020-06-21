@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoScreen extends StatefulWidget {
-
   final String id;
 
   VideoScreen({this.id});
@@ -12,7 +11,6 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _VideoScreenState extends State<VideoScreen> {
-
   YoutubePlayerController _controller;
 
   @override
@@ -31,12 +29,14 @@ class _VideoScreenState extends State<VideoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Video',style: TextStyle(
-            fontFamily: 'OpenSans',
-          color: Colors.greenAccent,
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold
-        ),),
+        title: Text(
+          'Video',
+          style: TextStyle(
+              fontFamily: 'OpenSans',
+              color: Colors.black,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Container(

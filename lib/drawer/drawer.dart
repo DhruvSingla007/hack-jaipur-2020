@@ -2,9 +2,8 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:hackjaipur2020/about/home_screen.dart';
-import 'package:hackjaipur2020/pages/about_page.dart';
-import 'package:hackjaipur2020/pages/discussions.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:hackjaipur2020/about/about_screen.dart';
 import 'package:hackjaipur2020/pages/my_profile_page.dart';
 import 'package:hackjaipur2020/pages/near_hospital_page.dart';
 import 'package:link/link.dart';
@@ -23,6 +22,7 @@ class _GuillotineMenuState extends State<GuillotineMenu>
   final Color _menuBg = Colors.black54;
 
   Animation<double> _menuAnimation;
+  String launchUrl = "";
 
   Animation<double> _toolbarTitleFadeAnimation;
 
@@ -31,7 +31,6 @@ class _GuillotineMenuState extends State<GuillotineMenu>
   @override
   void initState() {
     super.initState();
-
 
 /*
 This is to check the offset of the menu Icon in top left corner.
@@ -66,6 +65,29 @@ This is to check the offset of the menu Icon in top left corner.
     );
   }
 
+  Future<dynamic> _launchUrl(String url) async {
+    setState(() {
+      launchUrl = url;
+    });
+    if (await canLaunch(launchUrl)) {
+      await launch(launchUrl);
+    } else {
+      throw 'Could not launch $launchUrl';
+    }
+  }
+
+  Widget _buildURLLogos({Icon iconUsed, String pageURL}) {
+    return GestureDetector(
+      onTap: () => _launchUrl(pageURL),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 8.0,
+          right: 25.0,
+        ),
+        child: iconUsed,
+      ),
+    );
+  }
 
   @override
   void dispose() {
@@ -87,7 +109,6 @@ This is to check the offset of the menu Icon in top left corner.
         status == AnimationStatus.forward;
   }
 
-
   Future<bool> _onSettingsButtonsPressed(BuildContext context) {
     return showDialog(
         context: context,
@@ -100,24 +121,24 @@ This is to check the offset of the menu Icon in top left corner.
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'OpenSans',
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold
-              ),
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold),
             ),
             content: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 height: 60,
                 child: Center(
-                  child: Text('Do you want to know about the current status of Pandemic?',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'OpenSans',
-                    color: Colors.grey,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16.0
-                  ),),
+                  child: Text(
+                    'Do you want to know about the current status of Pandemic?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        color: Colors.grey,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16.0),
+                  ),
                 ),
               ),
             ),
@@ -130,8 +151,7 @@ This is to check the offset of the menu Icon in top left corner.
                           style: TextStyle(
                               fontFamily: 'OpenSans',
                               color: Colors.greenAccent,
-                              fontSize: 20.0
-                          )),
+                              fontSize: 20.0)),
                     ),
                     url: 'https://www.orfonline.org/covid19-tracker/',
                     onError: _showErrorSnackBar,
@@ -145,8 +165,7 @@ This is to check the offset of the menu Icon in top left corner.
                         style: TextStyle(
                             fontFamily: 'OpenSans',
                             color: Colors.greenAccent,
-                            fontSize: 20.0
-                        )),
+                            fontSize: 20.0)),
                   )
                 ],
               ),
@@ -154,7 +173,6 @@ This is to check the offset of the menu Icon in top left corner.
           );
         });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -233,6 +251,36 @@ This is to check the offset of the menu Icon in top left corner.
       child: Column(
         children: <Widget>[
           ListTile(
+            leading: Icon(Icons.person, color: Colors.white),
+            title: Text(
+              'My Profile',
+              style: TextStyle(
+                fontFamily: 'OpenSans',
+                color: Colors.white,
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyProfilePage(),
+                ),
+              );
+              // Update the state of the app.
+              // ...
+            },
+          ),
+          ListTile(
+              leading: Icon(Icons.track_changes, color: Colors.white),
+              title: Text(
+                'Covid19 Tracker',
+                style: TextStyle(
+                  fontFamily: 'OpenSans',
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () => _onSettingsButtonsPressed(context)),
+          ListTile(
             leading: Icon(Icons.local_hospital, color: Colors.white),
             title: Text(
               'Nearby Hospitals',
@@ -273,57 +321,6 @@ This is to check the offset of the menu Icon in top left corner.
               // ...
             },
           ),
-          ListTile(
-            leading: Icon(Icons.chat, color: Colors.white),
-            title: Text(
-              'Discussions',
-              style: TextStyle(
-                fontFamily: 'OpenSans',
-                color: Colors.white,
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DiscussionsPage(),
-                ),
-              );
-              // Update the state of the app.
-              // ...
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.person, color: Colors.white),
-            title: Text(
-              'Profile Page',
-              style: TextStyle(
-                fontFamily: 'OpenSans',
-                color: Colors.white,
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyProfilePage(),
-                ),
-              );
-              // Update the state of the app.
-              // ...
-            },
-          ),
-          ListTile(
-              leading: Icon(Icons.track_changes, color: Colors.white),
-              title: Text(
-                'Covid19 Tracker',
-                style: TextStyle(
-                  fontFamily: 'OpenSans',
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () => _onSettingsButtonsPressed(context)
-          ),
           Divider(
             thickness: 2.0,
             color: Colors.white,
@@ -356,13 +353,58 @@ This is to check the offset of the menu Icon in top left corner.
               ),
             ),
             onTap: () => _launchgmail(),
-
-              // Update the state of the app.
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 15.0,
+                    bottom: 22.0,
+                    left: 10.0,
+                  ),
+                  child: Text(
+                    'Follow On',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontFamily: 'Baloo',fontSize: 20.0, color: Colors.white),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    _buildURLLogos(
+                        iconUsed: Icon(
+                          Feather.facebook,
+                          color: Colors.white,
+                        ),
+                        pageURL: 'https://www.facebook.com/'),
+                    _buildURLLogos(
+                        iconUsed: Icon(
+                          Feather.instagram,
+                          color: Colors.white,
+                        ),
+                        pageURL: 'https://www.instagram.com/'),
+                    _buildURLLogos(
+                        iconUsed: Icon(
+                          Feather.linkedin,
+                          color: Colors.white,
+                        ),
+                        pageURL: 'https://www.linkedin.com/'),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
+
   _launchgmail() async {
     const url =
         'mailto:harshitsingh15967@gmail.com?subject=Feedback&body=Feedback for Our Support';

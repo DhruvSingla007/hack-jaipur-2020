@@ -13,14 +13,16 @@ class _NearHospitalState extends State<NearHospital> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
-          'NearBy Hospitals',
-          style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold),
+          title: const Text(
+            'NearBy Hospitals',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,),
         body: TheMap(key: widget._mapKey));
   }
 }
@@ -39,7 +41,9 @@ class _MyAppState extends State<TheMap> {
   void _onMapCreated(GoogleMapController controller) {
     _mapController = controller;
   }
+
   BitmapDescriptor _markerIcon;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +51,7 @@ class _MyAppState extends State<TheMap> {
       resizeToAvoidBottomInset: false,
       body: Container(
           child: GoogleMap(
-            markers: _createMarker(),
+        markers: _createMarker(),
         compassEnabled: true,
         myLocationButtonEnabled: true,
         mapToolbarEnabled: true,
@@ -60,6 +64,7 @@ class _MyAppState extends State<TheMap> {
       )),
     );
   }
+
   Set<Marker> _createMarker() {
     // TODO(iskakaushik): Remove this when collection literals makes it to stable.
     // https://github.com/flutter/flutter/issues/28312
@@ -67,7 +72,7 @@ class _MyAppState extends State<TheMap> {
     return <Marker>[
       Marker(
         markerId: MarkerId("marker_1"),
-        position: const LatLng(28.5672, 77.2100) ,
+        position: const LatLng(28.5672, 77.2100),
         icon: _markerIcon,
       ),
     ].toSet();

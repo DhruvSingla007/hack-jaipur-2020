@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hackjaipur2020/pages/home_page.dart';
 import 'package:hackjaipur2020/widgets/colors.dart';
 import 'package:hackjaipur2020/widgets/custom_button.dart';
 import 'package:hackjaipur2020/widgets/svg_label.dart';
@@ -101,13 +102,14 @@ class BenefitsSubscreen extends StatelessWidget {
           Align(
             alignment: Alignment(.8, 0.0),
             child: CustomButton(
-              text: 'Get in touch',
-              minWidth: 180,
-              onPressed: () {
-                controller.animateTo(0,
-                    duration: Duration(milliseconds: 2300), curve: Curves.ease);
-              },
-            ),
+                text: 'Get in touch',
+                minWidth: 180,
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()))
+//                controller.animateTo(0,
+//                    duration: Duration(milliseconds: 2300), curve: Curves.ease);
+
+                ),
           ),
           SizedBox(
             height: 200,

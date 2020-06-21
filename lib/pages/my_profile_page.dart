@@ -6,8 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'login_page.dart';
 
-
-class MyProfilePage extends StatefulWidget{
+class MyProfilePage extends StatefulWidget {
   static const String routeName = "/myproflie-page";
 
   @override
@@ -15,10 +14,8 @@ class MyProfilePage extends StatefulWidget{
 }
 
 class _MyProfilePageState extends State<MyProfilePage> {
-
   TextEditingController controllerNickname;
   TextEditingController controllerAboutMe;
-
 
   final GoogleSignIn googleSignIn = GoogleSignIn();
   SharedPreferences preferences;
@@ -66,9 +63,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
   _onAlertButtonsPressed(context) {
     Alert(
       style: AlertStyle(
-        backgroundColor: Colors.white,
-        titleStyle: TextStyle(fontFamily: 'Montserrat', color: Colors.black),
-        descStyle: TextStyle(fontFamily: 'Montserrat', color: Colors.black),
+        backgroundColor: Color(0xffCBE7EA),
+        titleStyle: TextStyle(fontFamily: 'OpenSans', color: Colors.black),
+        descStyle: TextStyle(fontFamily: 'OpenSans', color: Colors.black),
       ),
       context: context,
       type: AlertType.warning,
@@ -79,7 +76,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
           child: Text(
             "Cancel",
             style: TextStyle(
-                fontFamily: 'Montserrat', color: Colors.white, fontSize: 20),
+                fontFamily: 'OpenSans', color: Colors.white, fontSize: 20),
           ),
           onPressed: () => Navigator.pop(context),
           gradient: LinearGradient(colors: [
@@ -96,7 +93,10 @@ class _MyProfilePageState extends State<MyProfilePage> {
           onPressed: () {
             handleSignOut().then((val) {
               preferences.clear().then((val) {
-                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LoginPage()), (e) => false);
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    (e) => false);
                 //Navigator.pushNamed(context, LoginPage.routeName);
               });
             });
@@ -114,7 +114,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
-        color: Colors.black,
+        color: Color(0xffCBE7EA),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
@@ -128,19 +128,20 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   fontFamily: 'OpenSans',
                   fontSize: 18.0,
                   fontWeight: FontWeight.w500,
-                  color: Colors.greenAccent),
+                  color: Colors.black),
             ),
           ),
         ),
       ),
     );
   }
+
   Widget _buildMyProfileLogo(String imagePath) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Container(
         child: CircleAvatar(
-          backgroundColor: Colors.black,
+          backgroundColor: Color(0xffCBE7EA),
           radius: 50.0,
           child: Image.asset(
             imagePath,
@@ -172,17 +173,15 @@ class _MyProfilePageState extends State<MyProfilePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.1),
       appBar: AppBar(
         //backgroundColor: Colors.black,
         title: Text(
           "Profile Page",
           style: TextStyle(
               fontFamily: 'OpenSans',
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-              color: Colors.black
-          ),
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black),
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -200,6 +199,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
           child: ListView(
 //            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                height: 30,
+              ),
               _buildMyProfileLogo('assets/images/google_logo.png'),
               SizedBox(
                 height: 50.0,

@@ -8,7 +8,9 @@ class HospitalName {
   final String location;
   final String specialization;
   final String availability;
-  HospitalName(this.name,this.location,this.availability,this.specialization,this.imageUrl);
+
+  HospitalName(this.name, this.location, this.availability, this.specialization,
+      this.imageUrl);
 }
 
 class HospitalsPage extends StatefulWidget {
@@ -20,22 +22,42 @@ class HospitalsPage extends StatefulWidget {
 
 class _HospitalsPageState extends State<HospitalsPage> {
   static List<HospitalName> name = [
-    HospitalName('Aditya Hospitals','	4-1-16 Tilak Road Hyderabad 500 001 India','Allday',' + 91 40 475 2988','assets/images/booksImage.jpeg'),
-    HospitalName('Agadi Hospital and Research Centre','Wilson Garden Bangalore India','Allday',' + 91 80 222 2925','assets/images/booksImage.jpeg'),
-    HospitalName('Amar Leela Hospital','"B-1/6 Janakpuri-58 Delhi India"','Allday',' +91 11 553 7965','assets/images/booksImage.jpeg'),
-    HospitalName('Apex Hospitals','"SP-6 Malviya Industrial Area Malviya Ngr 302017 Jaipur India"','Allday',' + 91 141 751 871','assets/images/booksImage.jpeg'),
-    HospitalName('Bhagawan Mahaveer Jain Hospital','"Miller RoadMiller Road Vijaya Ngr Bangalore India"','Allday',' + 91 080 226 0944','assets/images/booksImage.jpeg'),
+    HospitalName(
+        'Aditya Hospitals',
+        '	4-1-16 Tilak Road Hyderabad 500 001 India',
+        'Allday',
+        ' + 91 40 475 2988',
+        'assets/images/booksImage.jpeg'),
+    HospitalName(
+        'Agadi Hospital and Research Centre',
+        'Wilson Garden Bangalore India',
+        'Allday',
+        ' + 91 80 222 2925',
+        'assets/images/booksImage.jpeg'),
+    HospitalName('Amar Leela Hospital', '"B-1/6 Janakpuri-58 Delhi India"',
+        'Allday', ' +91 11 553 7965', 'assets/images/booksImage.jpeg'),
+    HospitalName(
+        'Apex Hospitals',
+        '"SP-6 Malviya Industrial Area Malviya Ngr 302017 Jaipur India"',
+        'Allday',
+        ' + 91 141 751 871',
+        'assets/images/booksImage.jpeg'),
+    HospitalName(
+        'Bhagawan Mahaveer Jain Hospital',
+        '"Miller RoadMiller Road Vijaya Ngr Bangalore India"',
+        'Allday',
+        ' + 91 080 226 0944',
+        'assets/images/booksImage.jpeg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.5),
       appBar: new AppBar(
         title: new Text(
           'Hospitals',
           style: TextStyle(
-              color: Colors.greenAccent,
+              color: Colors.black,
               fontFamily: 'OpenSans',
               fontWeight: FontWeight.bold,
               fontSize: 20.0),
@@ -55,7 +77,7 @@ class _HospitalsPageState extends State<HospitalsPage> {
             );
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Color(0xff5cb3bc),
         tooltip: 'Search Hospitals',
         onPressed: () => showSearch(
           context: context,
@@ -84,7 +106,10 @@ class _HospitalsPageState extends State<HospitalsPage> {
             ),
           ),
         ),
-        child: Icon(Icons.search,color: Colors.black,),
+        child: Icon(
+          Icons.search,
+          color: Colors.black,
+        ),
       ),
     );
   }

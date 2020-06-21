@@ -122,7 +122,7 @@ class MinesweeperGameState extends State<MinesweeperGame> {
     }
 
     return Container(
-      color: Colors.grey[700],
+      //color: Colors.grey[700],
       padding: EdgeInsets.all(10.0),
       child: Column(
         children: boardRow,
@@ -136,58 +136,63 @@ class MinesweeperGameState extends State<MinesweeperGame> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Mine Sweeper',
-            style: TextStyle(
-                fontFamily: 'OpenSans',
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0),
-          ),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(50.0),
-            child: Row(children: <Widget>[
-              SizedBox(
-                width: 10,
-              ),
-              FlatButton(
-                child: Text(
-                  'Reset Board',
-                  style: TextStyle(color: Colors.black,fontFamily: 'OpenSans',),
-                ),
-                onPressed: () => resetBoard(),
-                highlightColor: Colors.green,
-                splashColor: Colors.lightGreen,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Colors.blue[200],
-                  ),
-                ),
-                color: Colors.greenAccent,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                height: 40.0,
-                alignment: Alignment.center,
-                child: RichText(
-                  text: TextSpan(
-                      text: wonGame
-                          ? "You've Won! $timeElapsed seconds"
-                          : alive
-                              ? "[Mines Found: $minesFound] [Total Mines: $numOfMines] \n [$timeElapsed seconds]"
-                              : "You've Lost! $timeElapsed seconds"),
-                ),
-              ),
-            ]),
-          )),
+        centerTitle: true,
+        title: Text(
+          'Mine Sweeper',
+          style: TextStyle(
+              fontFamily: 'OpenSans',
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0),
+        ),
+      ),
       body: Container(
-        color: Colors.grey[700],
         child: Column(
           children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
+            PreferredSize(
+              preferredSize: Size.fromHeight(50.0),
+              child: Row(children: <Widget>[
+                SizedBox(
+                  width: 25,
+                  //height: 30,
+                ),
+                FlatButton(
+                  child: Text(
+                    'Reset Board',
+                    style: TextStyle(color: Colors.black,fontFamily: 'OpenSans',),
+                  ),
+                  onPressed: () => resetBoard(),
+                  highlightColor: Colors.green,
+                  splashColor: Colors.lightGreen,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(
+                      color: Colors.blue[200],
+                    ),
+                  ),
+                  color: Colors.greenAccent,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 40.0,
+                  alignment: Alignment.center,
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black),
+                        text: wonGame
+                            ? "You've Won! $timeElapsed seconds"
+                            : alive
+                            ? "[Mines Found: $minesFound] [Total Mines: $numOfMines] \n [$timeElapsed seconds]"
+                            : "You've Lost! $timeElapsed seconds"),
+                  ),
+                ),
+              ]),
+            ),
             SizedBox(
               height: 50,
             ),

@@ -1,6 +1,7 @@
 //import 'package:hackjaipur2020/drawer/drawer.dart';
 import 'package:hackjaipur2020/drawer/drawer.dart';
 import 'package:hackjaipur2020/pages/discussions.dart';
+
 //import 'package:hackjaipur2020/pages/relax_zone_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -19,7 +20,9 @@ class HomePage extends StatefulWidget {
   static const String routeName = "/home-page";
 
   final String currentUserId;
+
   HomePage({Key key, @required this.currentUserId}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState(currentUserId: currentUserId);
 }
@@ -27,13 +30,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final String currentUserId;
 
-
   Future<bool> _onWillPop() {
     Alert(
       style: AlertStyle(
         backgroundColor: Colors.black,
-        titleStyle: TextStyle(color: Colors.white,fontFamily: 'OpenSans',),
-        descStyle: TextStyle(color: Colors.white,fontFamily: 'OpenSans',),
+        titleStyle: TextStyle(
+          color: Colors.white,
+          fontFamily: 'OpenSans',
+        ),
+        descStyle: TextStyle(
+          color: Colors.white,
+          fontFamily: 'OpenSans',
+        ),
       ),
       context: context,
       type: AlertType.error,
@@ -44,8 +52,7 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             "No",
             style: TextStyle(
-                fontFamily: 'OpenSans',
-                 color: Colors.white, fontSize: 20),
+                fontFamily: 'OpenSans', color: Colors.white, fontSize: 20),
           ),
           onPressed: () => Navigator.of(context).pop(false),
           gradient: LinearGradient(colors: [
@@ -57,8 +64,7 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             "Yes",
             style: TextStyle(
-                fontFamily: 'OpenSans',
-                color: Colors.white, fontSize: 20),
+                fontFamily: 'OpenSans', color: Colors.white, fontSize: 20),
           ),
           onPressed: () => SystemNavigator.pop(),
           gradient: LinearGradient(colors: [
@@ -81,6 +87,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _HomePageState({Key key, @required this.currentUserId});
+
   final List<Map<String, Object>> _pages = [
     {
       'page': DashboardPage(),
@@ -119,7 +126,7 @@ class _HomePageState extends State<HomePage> {
           title: Text(
             _pages[_selectedPageIndex]['appBarTitle'],
             style: TextStyle(
-              fontFamily: 'OpenSans',
+                fontFamily: 'OpenSans',
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0),
@@ -145,52 +152,60 @@ class _HomePageState extends State<HomePage> {
             type: BottomNavigationBarType.shifting,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xffCBE7EA),
                 icon: Icon(
                   Icons.home,
                   //color: Colors.grey,
                 ),
                 title: Text(
                   "Dashboard",
-                   style: TextStyle(fontFamily: 'OpenSans',),
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xffCBE7EA),
                 icon: Icon(
                   Icons.message,
                   // color: Colors.grey,
                 ),
                 title: Text(
                   "Consults",
-                  style: TextStyle(fontFamily: 'OpenSans',),
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xffCBE7EA),
                 icon: Icon(
                   Icons.category,
                   //color: Colors.grey,
                 ),
                 title: Text(
                   "Extras",
-                  style: TextStyle(fontFamily: 'OpenSans',),
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.black,
+                backgroundColor: Color(0xffCBE7EA),
                 icon: Icon(
                   Icons.videogame_asset,
                   //  color: Colors.grey,
                 ),
                 title: Text(
                   "Relax Zone",
-                  style: TextStyle(fontFamily: 'OpenSans',),
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                  ),
                 ),
               ),
             ],
             unselectedItemColor: Colors.grey,
-            selectedItemColor: Colors.greenAccent,
+            selectedItemColor: Color(0xff5cb3bc),
           ),
         ),
       ),

@@ -23,7 +23,7 @@ class IndLabTestTile extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: Card(
-          color: Colors.black,
+          color: Color(0xffCBE7EA),
           elevation: 8.0,
           child: Column(
             children: <Widget>[
@@ -54,7 +54,7 @@ class IndLabTestTile extends StatelessWidget {
                             fontFamily: 'OpenSans',
                             fontWeight: FontWeight.bold,
                             fontSize: 18.0,
-                            color: Colors.white),
+                            color: Colors.black),
                         //textAlign: TextAlign.justify,
                       ),
                     ),
@@ -65,7 +65,7 @@ class IndLabTestTile extends StatelessWidget {
                 padding: const EdgeInsets.all(1.0),
                 child: Divider(
                   thickness: 1.0,
-                  color: Colors.white,
+                  color: Colors.grey[100],
                 ),
               ),
               Padding(
@@ -78,8 +78,8 @@ class IndLabTestTile extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     labDescription,
-                    style: TextStyle(
-                        fontFamily: 'OpenSans', color: Colors.white),
+                    style:
+                        TextStyle(fontFamily: 'OpenSans', color: Colors.black),
                     textAlign: TextAlign.justify,
                   ),
                 ),
@@ -87,7 +87,6 @@ class IndLabTestTile extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,
@@ -101,9 +100,9 @@ class IndLabTestTile extends StatelessWidget {
                       style: TextStyle(
                           fontFamily: 'OpenSans',
                           fontWeight: FontWeight.bold,
-                          color: Colors.white
-                        //color: Color(0xff607D8B),
-                      ),
+                          color: Colors.black
+                          //color: Color(0xff607D8B),
+                          ),
                     ),
                     InkWell(
                         child: new Text(

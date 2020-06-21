@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hackjaipur2020/onboardingpages/onboarding_screen.dart';
-import 'package:hackjaipur2020/pages/about_page.dart';
 import 'package:hackjaipur2020/pages/dashboard_page.dart';
 import 'package:hackjaipur2020/pages/discussions.dart';
 import 'package:hackjaipur2020/pages/extras_page.dart';
@@ -15,7 +14,7 @@ import 'package:hackjaipur2020/pages/splash_page.dart';
 
 import 'minigameminesweeper/minesweeper.dart';
 
-void main(){
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
@@ -27,7 +26,8 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
-      theme: ThemeData(primaryColor: Color(0xffCBE7EA),
+      theme: ThemeData(
+          primaryColor: Color(0xffCBE7EA),
           appBarTheme: AppBarTheme(
             color: Color(0xffCBE7EA),
           )),
@@ -39,7 +39,6 @@ class MyApp extends StatelessWidget {
         LoginPage.routeName: (context) => LoginPage(),
         HomePage.routeName: (context) => HomePage(),
         MyProfilePage.routeName: (context) => MyProfilePage(),
-        AboutPage.routeName: (context) => AboutPage(),
         DiscussionsPage.routeName: (context) => DiscussionsPage(),
         ExtrasPage.routeName: (context) => ExtrasPage(),
         RelaxZonePage.routeName: (context) => RelaxZonePage(),

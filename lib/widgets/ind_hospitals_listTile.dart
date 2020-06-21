@@ -18,7 +18,7 @@ class IndHospitalListTile extends StatelessWidget {
 
   Widget makeListTile(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: Color(0xffCBE7EA),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -46,7 +46,7 @@ class IndHospitalListTile extends StatelessWidget {
                       padding: const EdgeInsets.all(5.0),
                       child: Icon(
                         Icons.brightness_medium,
-                        color: Colors.greenAccent,
+                        color: Color(0xff5cb3bc),
                         size: 20.0,
                       ),
                     ),
@@ -57,7 +57,7 @@ class IndHospitalListTile extends StatelessWidget {
                           name,
                           style: TextStyle(
                             fontFamily: 'OpenSans',
-                            color: Colors.white,
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 16.0,
                           ),
@@ -75,7 +75,7 @@ class IndHospitalListTile extends StatelessWidget {
                           padding: const EdgeInsets.all(5.0),
                           child: Icon(
                             Icons.event_available,
-                            color: Colors.greenAccent,
+                            color: Color(0xff5cb3bc),
                             size: 15.0,
                           ),
                         ),
@@ -86,7 +86,7 @@ class IndHospitalListTile extends StatelessWidget {
                               location,
                               style: TextStyle(
                                 fontFamily: 'OpenSans',
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),
@@ -99,7 +99,7 @@ class IndHospitalListTile extends StatelessWidget {
                           padding: const EdgeInsets.all(5.0),
                           child: Icon(
                             Icons.label_important,
-                            color: Colors.greenAccent,
+                            color: Color(0xff5cb3bc),
                             size: 15.0,
                           ),
                         ),
@@ -110,7 +110,7 @@ class IndHospitalListTile extends StatelessWidget {
                               specialization,
                               style: TextStyle(
                                 fontFamily: 'OpenSans',
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),
@@ -123,7 +123,7 @@ class IndHospitalListTile extends StatelessWidget {
                           padding: const EdgeInsets.all(5.0),
                           child: Icon(
                             FlutterIcons.alarm_mdi,
-                            color: Colors.greenAccent,
+                            color: Color(0xff5cb3bc),
                             size: 15.0,
                           ),
                         ),
@@ -134,7 +134,7 @@ class IndHospitalListTile extends StatelessWidget {
                               availability,
                               style: TextStyle(
                                 fontFamily: 'OpenSans',
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),

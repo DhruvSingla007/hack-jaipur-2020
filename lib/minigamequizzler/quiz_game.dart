@@ -30,7 +30,8 @@ class _QuizPageState extends State<QuizPage> {
             DialogButton(
               child: Text(
                 "RESTART",
-                style: TextStyle(fontFamily: 'OpenSans',color: Colors.white, fontSize: 20),
+                style: TextStyle(
+                    fontFamily: 'OpenSans', color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
               color: Color.fromRGBO(0, 179, 134, 1.0),
@@ -71,14 +72,12 @@ class _QuizPageState extends State<QuizPage> {
           'Quizzler',
           style: TextStyle(
               fontFamily: 'OpenSans',
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0
-          ),
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0),
         ),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey[700],
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
@@ -96,7 +95,7 @@ class _QuizPageState extends State<QuizPage> {
                     style: TextStyle(
                       fontFamily: 'OpenSans',
                       fontSize: 25.0,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -105,7 +104,10 @@ class _QuizPageState extends State<QuizPage> {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(15.0),
-                child: FlatButton(
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
                   textColor: Colors.white,
                   color: Colors.green,
                   onPressed: () {
@@ -124,7 +126,10 @@ class _QuizPageState extends State<QuizPage> {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(15.0),
-                child: FlatButton(
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
                   textColor: Colors.white,
                   color: Colors.red,
                   onPressed: () {

@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => HomePage()));//homepage need to added
+              builder: (context) => HomePage())); //homepage need to added
     } else {
       Fluttertoast.showToast(msg: "Sign in fail");
       this.setState(() {
@@ -261,7 +261,8 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => null)))//home page need to added
+                                builder: (context) =>
+                                    null))) //home page need to added
                     .catchError((err) => print(err)))
                 .catchError((err) => print(err));
           }
@@ -346,7 +347,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  
 
   Widget _buildSignupBtn() {
     return GestureDetector(
@@ -478,7 +478,8 @@ class _LoginPageState extends State<LoginPage> {
                                                     child: Text(
                                                         "Verifying Credentials ...",
                                                         style: TextStyle(
-                                                            fontFamily: 'OpenSans',
+                                                            fontFamily:
+                                                                'OpenSans',
                                                             fontSize: 16)),
                                                   ),
                                                 ])))

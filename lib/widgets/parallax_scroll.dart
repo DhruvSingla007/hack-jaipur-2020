@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:hackjaipur2020/about/home_screen.dart';
+import 'package:hackjaipur2020/about/about_screen.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ParallaxScroll extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hackjaipur2020/about/urban_planners_subscreen.dart';
+import 'package:hackjaipur2020/about/about_page_subscreen.dart';
 import 'package:hackjaipur2020/widgets/colors.dart';
 import 'package:hackjaipur2020/widgets/parallax_scroll.dart';
 import 'package:hackjaipur2020/widgets/parallax_svg_background.dart';

@@ -10,7 +10,6 @@ import 'package:hackjaipur2020/utils/mypainter.dart';
 import 'package:hackjaipur2020/pages/login_page.dart';
 
 class PageThree extends StatefulWidget {
-
   @override
   _PageThreeState createState() => _PageThreeState();
 }
@@ -24,33 +23,31 @@ class _PageThreeState extends State<PageThree> {
     startTime();
   }
 
-
   startTime() async {
     var _duration = new Duration(seconds: 3);
     return Timer(_duration, navigationPage);
   }
 
   void navigationPage() async {
-
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
 
-    if(user == null) {
+    if (user == null) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => LoginPage(),
         ),
       );
-    }
-    else {
-
-      _userRef.document(user.uid).get().then((DocumentSnapshot snapshot){
-
-        if(snapshot.data != null)
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())); //home page need to added
-        });
-
+    } else {
+      _userRef.document(user.uid).get().then((DocumentSnapshot snapshot) {
+        if (snapshot.data != null)
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomePage())); //home page need to added
+      });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -158,28 +155,30 @@ class _PageThreeState extends State<PageThree> {
                 ),
                 Center(
                     child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      onPressed: () {
-                        if (_userRef == null)
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-
-                          );
-                        else
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));//homepage need to added
-                      },
-                      child: Text(
-                        "Get Started!",
-                        style: TextStyle(fontFamily: 'OpenSans',color: Colors.black, fontSize: 18.0),
-                      ),
-                      color: Color(0xffCBE7EA),
-                    )),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  onPressed: () {
+                    if (_userRef == null)
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    else
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  HomePage())); //homepage need to added
+                  },
+                  child: Text(
+                    "Get Started!",
+                    style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        color: Colors.black,
+                        fontSize: 18.0),
+                  ),
+                  color: Color(0xffCBE7EA),
+                )),
                 SizedBox(
                   height: SizeConfig.blockSizeVertical * 4,
                 ),

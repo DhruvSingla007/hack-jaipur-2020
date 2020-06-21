@@ -25,23 +25,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: PageThree(),
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        body: LiquidSwipe(
-          pages: pages,
-          fullTransitionValue: 500,
-          enableSlideIcon: true,
-          enableLoop: false,
-          positionSlideIcon: 0.744,
-          waveType: WaveType.liquidReveal,
-          slideIconWidget: Icon(
-            Icons.arrow_back_ios,
-            size: 18,
-            color: Color(0xff546E7A),
-          ),
-          initialPage: 0,
+    return Scaffold(
+      body: LiquidSwipe(
+        pages: pages,
+        fullTransitionValue: 500,
+        enableSlideIcon: true,
+        enableLoop: false,
+        positionSlideIcon: 0.744,
+        waveType: WaveType.liquidReveal,
+        slideIconWidget: Icon(
+          Icons.arrow_back_ios,
+          size: 18,
+          color: Color(0xff546E7A),
         ),
+        initialPage: 0,
+      ),
     );
   }
 }

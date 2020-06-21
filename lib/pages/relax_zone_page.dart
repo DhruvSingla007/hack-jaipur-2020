@@ -9,17 +9,14 @@ import 'package:music_player/music_player.dart';
 class RelaxZonePage extends StatefulWidget {
   static const String routeName = '/relax-page';
 
-
   @override
   _RelaxZonePageState createState() => _RelaxZonePageState();
 }
 
 class _RelaxZonePageState extends State<RelaxZonePage> {
-
   MusicPlayer musicPlayer;
   String _duration = "";
   final _durationInputController = new TextEditingController();
-
 
   @override
   void initState() {
@@ -32,76 +29,84 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
     musicPlayer = MusicPlayer();
   }
 
-  Future<bool> _onDurationButtonPressed(BuildContext context)
-  {
+  Future<bool> _onDurationButtonPressed(BuildContext context) {
     return showDialog(
         context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context)
-        {
+        barrierDismissible: false,
+        builder: (BuildContext context) {
           return new AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(30.0),
+            ),
+            backgroundColor: Color(0xffCBE7EA),
             title: Center(
-              child: Text("Set Duration for song",
-              style: TextStyle(color: Colors.black),),
+              child: Text(
+                "Set Duration for song",
+                style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+              ),
             ),
             content: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 96,
+                height: 120,
                 child: Column(
-                  children: <Widget>[TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(top: 14.0),
-                      prefixIcon: Icon(
-                        Icons.edit_attributes,
-                        color: Colors.greenAccent,
-                      ),
-                      hintText: 'Set the duration',
-                      hintStyle: TextStyle(
-                        color: Colors.black45,
-                        fontFamily: 'OpenSans',
-                      ),
+                  children: <Widget>[
+                    TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
+                            Icons.edit_attributes,
+                            color: Colors.black,
+                          ),
+                          hintText: 'Set the duration',
+                          hintStyle: TextStyle(
+                            color: Colors.black45,
+                            fontFamily: 'OpenSans',
+                          ),
+                        ),
+                        onTap: () => setState(() {
+                              _duration =
+                                  _durationInputController.text.toString();
+                            })),
+                    SizedBox(
+                      height: 20,
                     ),
-                    onTap: () => setState(() {
-                      _duration = _durationInputController.text.toString();
-                    })
-                  ),
-                    FlatButton(
+                    RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0),
+                      ),
                       color: Colors.black,
                       onPressed: () => Navigator.of(context).pop(false),
                       child: Text(
                         'SET',
                         style: TextStyle(
-                          color: Colors.greenAccent,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold
-                        ),
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold),
                       ),
                     )
-                ],
+                  ],
                 ),
               ),
             ),
           );
-        }
-    );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        color: Colors.black87,
         child: Column(
           children: <Widget>[
             SizedBox(
               height: 20.0,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: Material(
-                color: Colors.black,
+                color: Color(0xffCBE7EA),
                 elevation: 14,
                 borderRadius: BorderRadius.circular(30.0),
                 child: Center(
@@ -109,68 +114,100 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: <Widget>[
-                        Text("Games",
-                        style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.greenAccent
-                        ),),
+                        Text(
+                          "Games",
+                          style: TextStyle(
+                              fontFamily: 'OpenSans',
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
                         SizedBox(
                           height: 20,
                         ),
                         ListTile(
-                          leading: Icon(SimpleLineIcons.game_controller,color: Colors.greenAccent,),
-                          title: Text('Minesweeper Game',
-                          style: TextStyle(
-                            color: Colors.white
-                          ),),
+                          leading: Icon(
+                            SimpleLineIcons.game_controller,
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            'Minesweeper Game',
+                            style: TextStyle(
+                                fontFamily: 'OpenSans', color: Colors.black),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Icon(FlutterIcons.fantasy_flight_games_faw5d,color: Colors.black,),
-                              onPressed: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => MinesweeperGame())),
+                              icon: Icon(
+                                FlutterIcons.fantasy_flight_games_faw5d,
+                                color: Colors.black,
+                              ),
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MinesweeperGame())),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                          padding:
+                              const EdgeInsets.only(left: 16.0, right: 16.0),
                           child: Divider(
                             thickness: 2.0,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         ListTile(
-                          leading: Icon(SimpleLineIcons.game_controller,color: Colors.greenAccent,),
-                          title: Text('Fiar Game',
+                          leading: Icon(
+                            SimpleLineIcons.game_controller,
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            'Fiar Game',
                             style: TextStyle(
-                                color: Colors.white
-                            ),),
+                                color: Colors.black, fontFamily: 'OpenSans'),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Icon(FlutterIcons.games_mdi,color: Colors.black,),
-                              onPressed: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => MatchPage())),
+                              icon: Icon(
+                                FlutterIcons.games_mdi,
+                                color: Colors.black,
+                              ),
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MatchPage())),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                          padding:
+                              const EdgeInsets.only(left: 16.0, right: 16.0),
                           child: Divider(
                             thickness: 2.0,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         ListTile(
-                          leading: Icon(SimpleLineIcons.game_controller,color: Colors.greenAccent,),
-                          title: Text('Quizzler Game',
+                          leading: Icon(
+                            SimpleLineIcons.game_controller,
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            'Quizzler Game',
                             style: TextStyle(
-                                color: Colors.white
-                            ),),
+                                color: Colors.black, fontFamily: 'OpenSans'),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Image.asset('assets/images/google_logo.png'),
-                              onPressed: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => QuizPage())),
+                              icon:
+                                  Image.asset('assets/images/google_logo.png'),
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => QuizPage())),
                             ),
                           ),
                         ),
@@ -184,9 +221,9 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: Material(
-                color: Colors.black,
+                color: Color(0xffCBE7EA),
                 elevation: 14,
                 borderRadius: BorderRadius.circular(30.0),
                 child: Center(
@@ -194,31 +231,38 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: <Widget>[
-                        Text("Music",
+                        Text(
+                          "Music",
                           style: TextStyle(
+                              fontFamily: 'OpenSans',
                               fontSize: 25.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.greenAccent
-                          ),),
+                              color: Colors.black),
+                        ),
                         SizedBox(
                           height: 20,
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
                               icon: Icon(Icons.edit, color: Colors.black),
-                              onPressed: () => _onDurationButtonPressed(context),
+                              onPressed: () =>
+                                  _onDurationButtonPressed(context),
                             ),
                           ),
-                          title: Text('Music One',
+                          title: Text(
+                            'Music One',
                             style: TextStyle(
-                                color: Colors.white
-                            ),),
+                                color: Colors.black, fontFamily: 'OpenSans'),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Icon(FlutterIcons.play_video_fou,color: Colors.black,),
+                              icon: Icon(
+                                FlutterIcons.play_video_fou,
+                                color: Colors.black,
+                              ),
                               onPressed: () => musicPlayer.play(MusicItem(
                                 trackName: 'Sample',
                                 albumName: 'Sample Album',
@@ -231,29 +275,35 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                          padding:
+                              const EdgeInsets.only(left: 16.0, right: 16.0),
                           child: Divider(
                             thickness: 2.0,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
                               icon: Icon(Icons.edit, color: Colors.black),
-                              onPressed: () => _onDurationButtonPressed(context),
+                              onPressed: () =>
+                                  _onDurationButtonPressed(context),
                             ),
                           ),
-                          title: Text('Music Two',
+                          title: Text(
+                            'Music Two',
                             style: TextStyle(
-                                color: Colors.white
-                            ),),
+                                color: Colors.black, fontFamily: 'OpenSans'),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Icon(FlutterIcons.play_video_fou,color: Colors.black,),
-                              onPressed: () =>  musicPlayer.play(MusicItem(
+                              icon: Icon(
+                                FlutterIcons.play_video_fou,
+                                color: Colors.black,
+                              ),
+                              onPressed: () => musicPlayer.play(MusicItem(
                                 trackName: 'Sample',
                                 albumName: 'Sample Album',
                                 artistName: 'Sample Artist',
@@ -265,29 +315,35 @@ class _RelaxZonePageState extends State<RelaxZonePage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                          padding:
+                              const EdgeInsets.only(left: 16.0, right: 16.0),
                           child: Divider(
                             thickness: 2.0,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
                               icon: Icon(Icons.edit, color: Colors.black),
-                              onPressed: () => _onDurationButtonPressed(context),
+                              onPressed: () =>
+                                  _onDurationButtonPressed(context),
                             ),
                           ),
-                          title: Text('Music Three',
+                          title: Text(
+                            'Music Three',
                             style: TextStyle(
-                                color: Colors.white
-                            ),),
+                                color: Colors.black, fontFamily: 'OpenSans'),
+                          ),
                           trailing: CircleAvatar(
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
                             child: IconButton(
-                              icon: Icon(FlutterIcons.play_video_fou,color: Colors.black,),
-                              onPressed: () =>  musicPlayer.play(MusicItem(
+                              icon: Icon(
+                                FlutterIcons.play_video_fou,
+                                color: Colors.black,
+                              ),
+                              onPressed: () => musicPlayer.play(MusicItem(
                                 trackName: 'Sample',
                                 albumName: 'Sample Album',
                                 artistName: 'Sample Artist',
