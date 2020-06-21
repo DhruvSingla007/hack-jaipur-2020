@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => HomePage()));//homepage need to added
+              builder: (context) => HomePage(currentUserId: currentUser.uid,)));//homepage need to added
     } else {
       Fluttertoast.showToast(msg: "Sign in fail");
       this.setState(() {

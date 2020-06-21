@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hackjaipur2020/about/home_screen.dart';
 import 'package:hackjaipur2020/pages/about_page.dart';
+import 'package:hackjaipur2020/pages/corona_tracker.dart';
 import 'package:hackjaipur2020/pages/discussions.dart';
 import 'package:hackjaipur2020/pages/my_profile_page.dart';
 import 'package:hackjaipur2020/pages/near_hospital_page.dart';
@@ -322,7 +323,12 @@ This is to check the offset of the menu Icon in top left corner.
                   color: Colors.white,
                 ),
               ),
-              onTap: () => _onSettingsButtonsPressed(context)
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CoronaTracker(),
+                ),
+              ),
           ),
           Divider(
             thickness: 2.0,
